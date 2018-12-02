@@ -6,17 +6,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
+import { Posts } from "./blog/posts.component";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+var routes = [
+    { path: "", component: Posts },
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         NgModule({
             declarations: [
-                AppComponent
+                AppComponent,
+                Posts
             ],
             imports: [
-                BrowserModule
+                BrowserModule,
+                HttpClientModule,
+                FormsModule,
+                RouterModule.forRoot(routes, {
+                    useHash: true,
+                    enableTracing: false // for Debugging of the Routes
+                })
             ],
             providers: [],
             bootstrap: [AppComponent]
