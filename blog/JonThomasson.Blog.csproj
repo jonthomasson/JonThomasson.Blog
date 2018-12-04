@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\blog\posts.component.ts" />
+    <None Remove="ClientApp\app\shared\dataService.ts" />
+    <None Remove="ClientApp\app\shared\post.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\blog\posts.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\dataService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\post.ts" />
   </ItemGroup>
 
   <ItemGroup>

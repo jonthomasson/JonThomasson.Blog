@@ -18,10 +18,17 @@ namespace JonThomasson.Blog.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+        /// <summary>
+        /// use this area to add model hints about how the db will be generated from your entities.
+        /// </summary>
+        /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<Post>()
+           .Property(b => b.IsActive)
+           .HasDefaultValue(0);
             //builder.Entity<Post>().HasOne(p => p.PostTags).WithMany(t => t.);
 
             //builder.Entity<Product>()

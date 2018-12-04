@@ -14,6 +14,13 @@ namespace JonThomasson.Blog.Data.Entities
         public string BodyMd { get; set; }
         [MaxLength(250)]
         public string Title { get; set; }
+        [MaxLength(500)]
+        public string Description { get; set; }
+        [MaxLength(150)]
+        public string PhotoName { get; set; }
+        [MaxLength(150)]
+        public string PhotoNameThumb { get; set; }
+        public bool IsActive { get; set; }
         public ICollection<PostTags> Tags { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }

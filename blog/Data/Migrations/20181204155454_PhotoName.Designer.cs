@@ -4,14 +4,16 @@ using JonThomasson.Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JonThomasson.Blog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20181204155454_PhotoName")]
+    partial class PhotoName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,18 +56,9 @@ namespace JonThomasson.Blog.Migrations
 
                     b.Property<DateTime>("CreationDate");
 
-                    b.Property<string>("Description")
-                        .HasMaxLength(500);
+                    b.Property<string>("PhotoName");
 
-                    b.Property<bool>("IsActive")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(false);
-
-                    b.Property<string>("PhotoName")
-                        .HasMaxLength(150);
-
-                    b.Property<string>("PhotoNameThumb")
-                        .HasMaxLength(150);
+                    b.Property<string>("PhotoNameThumb");
 
                     b.Property<string>("Title")
                         .HasMaxLength(250);

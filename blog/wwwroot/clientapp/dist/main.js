@@ -85,14 +85,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./app/app.component.ts");
 /* harmony import */ var _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blog/posts.component */ "./app/blog/posts.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _blog_postsList_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blog/postsList.component */ "./app/blog/postsList.component.ts");
+/* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -110,18 +114,21 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__["Posts"]
+                _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__["Posts"],
+                _blog_postsList_component__WEBPACK_IMPORTED_MODULE_5__["PostsList"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes, {
+                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(routes, {
                     useHash: true,
                     enableTracing: false // for Debugging of the Routes
                 })
             ],
-            providers: [],
+            providers: [
+                _shared_dataService__WEBPACK_IMPORTED_MODULE_6__["DataService"]
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -139,7 +146,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "        <article class=\"card wow fadeInLeft animation-delay-5 mb-4\">\r\n            <div class=\"card-body overflow-hidden overflow-hidden\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-xl-6\">\r\n                        <img src=\"assets/img/demo/post4.jpg\" alt=\"\" class=\"img-fluid mb-4\">\r\n                    </div>\r\n                    <div class=\"col-xl-6\">\r\n                        <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">Earum delectus libero ipsa temporibus in minus</a></h3>\r\n                        <p class=\"mb-4\">Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudianda beatae magni es repudiandae beatae magni magnam autem natuse inse on voluptates elit sit molestias.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-8\">\r\n                        <img src=\"assets/img/demo/headshot50x50.png\" alt=\"...\" class=\"rounded-circle mr-1\"> by <a href=\"javascript:void(0)\">Victoria</a> in <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\">Design</a>\r\n                        <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">April 15, 2015</span></span>\r\n                    </div>\r\n                    <div class=\"col-lg-4 text-right\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </article>\r\n        <article class=\"card wow fadeInLeft animation-delay-5 mb-4\">\r\n            <div class=\"card-body overflow-hidden\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-6\">\r\n                        <img src=\"assets/img/demo/post5.jpg\" alt=\"\" class=\"img-fluid mb-4\">\r\n                    </div>\r\n                    <div class=\"col-lg-6\">\r\n                        <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">Earum delectus libero ipsa temporibus in minus</a></h3>\r\n                        <p class=\"mb-4\">Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudianda beatae magni es repudiandae beatae magni magnam autem natuse inse on voluptates elit sit molestias.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-8\">\r\n                        <img src=\"assets/img/demo/avatar50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\"> by <a href=\"javascript:void(0)\">Victoria</a> in <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-warning\">Graphics</a>\r\n                        <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">January 27, 2016</span></span>\r\n                    </div>\r\n                    <div class=\"col-lg-4 text-right\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </article>\r\n        <article class=\"card wow fadeInLeft animation-delay-5 mb-4\">\r\n            <div class=\"card-body overflow-hidden\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-6\">\r\n                        <img src=\"assets/img/demo/post2.jpg\" alt=\"\" class=\"img-fluid mb-4\">\r\n                    </div>\r\n                    <div class=\"col-lg-6\">\r\n                        <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">Earum delectus libero ipsa temporibus in minus</a></h3>\r\n                        <p class=\"mb-4\">Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudianda beatae magni es repudiandae beatae magni magnam autem natuse inse on voluptates elit sit molestias.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-8\">\r\n                        <img src=\"assets/img/demo/avatar50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\"> by <a href=\"javascript:void(0)\">Victoria</a> in <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-royal\">Productivity</a>\r\n                        <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">Aufust 18, 2015</span></span>\r\n                    </div>\r\n                    <div class=\"col-lg-4 text-right\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </article>\r\n        <article class=\"card wow fadeInLeft animation-delay-5 mb-4\">\r\n            <div class=\"card-body overflow-hidden\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-6\">\r\n                        <img src=\"assets/img/demo/post3.jpg\" alt=\"\" class=\"img-fluid mb-4\">\r\n                    </div>\r\n                    <div class=\"col-lg-6\">\r\n                        <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">Earum delectus libero ipsa temporibus in minus</a></h3>\r\n                        <p class=\"mb-4\">Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudianda beatae magni es repudiandae beatae magni magnam autem natuse inse on voluptates elit sit molestias.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-8\">\r\n                        <img src=\"assets/img/demo/avatar50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\"> by <a href=\"javascript:void(0)\">Victoria</a> in <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-warning\">Graphics</a>\r\n                        <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">January 27, 2016</span></span>\r\n                    </div>\r\n                    <div class=\"col-lg-4 text-right\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </article>\r\n        <article class=\"card wow fadeInLeft animation-delay-5 mb-4\">\r\n            <div class=\"card-body overflow-hidden\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-6\">\r\n                        <img src=\"assets/img/demo/post1.jpg\" alt=\"\" class=\"img-fluid mb-4\">\r\n                    </div>\r\n                    <div class=\"col-lg-6\">\r\n                        <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">Earum delectus libero ipsa temporibus in minus</a></h3>\r\n                        <p class=\"mb-4\">Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudianda beatae magni es repudiandae beatae magni magnam autem natuse inse on voluptates elit sit molestias.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-8\">\r\n                        <img src=\"assets/img/demo/avatar50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\"> by <a href=\"javascript:void(0)\">Victoria</a> in <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-success\">Multimedia</a>\r\n                        <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">January 27, 2016</span></span>\r\n                    </div>\r\n                    <div class=\"col-lg-4 text-right\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </article>\r\n        <nav aria-label=\"Page navigation\">\r\n            <ul class=\"pagination pagination-plain\">\r\n                <li class=\"page-item\">\r\n                    <a class=\"page-link\" href=\"javascript:void(0)\" aria-label=\"Previous\">\r\n                        <span aria-hidden=\"true\">&laquo;</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"page-item active\"><a class=\"page-link\" href=\"javascript:void(0)\">1</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">2</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">3</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">4</a></li>\r\n                <li class=\"page-item\">\r\n                    <a class=\"page-link\" href=\"javascript:void(0)\" aria-label=\"Next\">\r\n                        <span aria-hidden=\"true\">&raquo;</span>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n        </nav>\r\n   "
+module.exports = "        <posts-list></posts-list>\r\n        <nav aria-label=\"Page navigation\">\r\n            <ul class=\"pagination pagination-plain\">\r\n                <li class=\"page-item\">\r\n                    <a class=\"page-link\" href=\"javascript:void(0)\" aria-label=\"Previous\">\r\n                        <span aria-hidden=\"true\">&laquo;</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"page-item active\"><a class=\"page-link\" href=\"javascript:void(0)\">1</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">2</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">3</a></li>\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"javascript:void(0)\">4</a></li>\r\n                <li class=\"page-item\">\r\n                    <a class=\"page-link\" href=\"javascript:void(0)\" aria-label=\"Next\">\r\n                        <span aria-hidden=\"true\">&raquo;</span>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n        </nav>\r\n   "
 
 /***/ }),
 
@@ -171,6 +178,117 @@ var Posts = /** @class */ (function () {
         })
     ], Posts);
     return Posts;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/blog/postsList.component.html":
+/*!*******************************************!*\
+  !*** ./app/blog/postsList.component.html ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\">Design</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
+
+/***/ }),
+
+/***/ "./app/blog/postsList.component.ts":
+/*!*****************************************!*\
+  !*** ./app/blog/postsList.component.ts ***!
+  \*****************************************/
+/*! exports provided: PostsList */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsList", function() { return PostsList; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/dataService */ "./app/shared/dataService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PostsList = /** @class */ (function () {
+    function PostsList(data) {
+        this.data = data;
+        this.posts = data.posts;
+    }
+    PostsList.prototype.ngOnInit = function () {
+        var _this = this;
+        this.data.loadPosts()
+            .subscribe(function (success) {
+            if (success) {
+                _this.posts = _this.data.posts;
+            }
+        });
+    };
+    PostsList = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "posts-list",
+            template: __webpack_require__(/*! ./postsList.component.html */ "./app/blog/postsList.component.html"),
+        }),
+        __metadata("design:paramtypes", [_shared_dataService__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
+    ], PostsList);
+    return PostsList;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/shared/dataService.ts":
+/*!***********************************!*\
+  !*** ./app/shared/dataService.ts ***!
+  \***********************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DataService = /** @class */ (function () {
+    function DataService(http) {
+        this.http = http;
+        this.posts = [];
+    }
+    DataService.prototype.loadPosts = function () {
+        var _this = this;
+        return this.http.get("/api/posts")
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            _this.posts = data;
+            return true;
+        }));
+    };
+    DataService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
+    ], DataService);
+    return DataService;
 }());
 
 
