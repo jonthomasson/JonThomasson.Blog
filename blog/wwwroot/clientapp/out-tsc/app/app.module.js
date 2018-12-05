@@ -9,12 +9,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { Posts } from "./blog/posts.component";
+import { PostDetail } from "./blog/postDetail.component";
 import { PostsList } from "./blog/postsList.component";
 import { DataService } from "./shared/dataService";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 var routes = [
     { path: "", component: Posts },
+    { path: "post/:id", component: PostDetail },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -24,7 +26,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 AppComponent,
                 Posts,
-                PostsList
+                PostsList,
+                PostDetail
             ],
             imports: [
                 BrowserModule,

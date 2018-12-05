@@ -33,6 +33,14 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
+    DataService.prototype.getPost = function (id) {
+        var _this = this;
+        return this.http.get("/api/posts/" + id)
+            .pipe(map(function (data) {
+            _this.post = data;
+            return true;
+        }));
+    };
     DataService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])

@@ -78,6 +78,7 @@ namespace blog
                 cfg.CreateMap<Tag, TagViewModel>();
                 cfg.CreateMap<Post, PostListViewModel>();
                 cfg.CreateMap<PostTag, PostTagViewModel>();
+                cfg.CreateMap<Post, PostDetailViewModel>();
 
             });
 

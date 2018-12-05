@@ -20,6 +20,21 @@ namespace JonThomasson.Blog.Controllers
             _repository = repository;
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetPost(int id)
+        {
+            try
+            {
+                var post = _repository.GetAllPosts(true).FirstOrDefault(p => p.Id == id);
+                return Ok(Mapper.Map<PostDetailViewModel>(post));
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Failed to get posts. {ex.Message}");
+            }
+        }
+
         [HttpGet]
         public IActionResult Get(bool includeComments = false)
         {

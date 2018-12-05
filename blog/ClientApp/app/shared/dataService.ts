@@ -12,6 +12,7 @@ export class DataService {
     }
     
     public posts: Post[] = [];
+    public post: Post;
 
     loadPosts(): Observable<boolean> {
         return this.http.get("/api/posts")
@@ -30,6 +31,15 @@ export class DataService {
             .pipe(
                 map((data: any[]) => {
                     this.posts = data;
+                    return true;
+                }));
+    }
+
+    getPost(id): Observable<boolean> {
+        return this.http.get("/api/posts/" + id) 
+            .pipe(
+                map((data: any) => {
+                    this.post = data;
                     return true;
                 }));
     }
