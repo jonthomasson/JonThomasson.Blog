@@ -9,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { Posts } from "./blog/posts.component";
+import { PostsList } from "./blog/postsList.component";
+import { DataService } from "./shared/dataService";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 var routes = [
@@ -21,7 +23,8 @@ var AppModule = /** @class */ (function () {
         NgModule({
             declarations: [
                 AppComponent,
-                Posts
+                Posts,
+                PostsList
             ],
             imports: [
                 BrowserModule,
@@ -32,7 +35,9 @@ var AppModule = /** @class */ (function () {
                     enableTracing: false // for Debugging of the Routes
                 })
             ],
-            providers: [],
+            providers: [
+                DataService
+            ],
             bootstrap: [AppComponent]
         })
     ], AppModule);

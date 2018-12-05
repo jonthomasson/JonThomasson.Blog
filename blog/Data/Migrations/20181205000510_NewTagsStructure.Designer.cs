@@ -4,14 +4,16 @@ using JonThomasson.Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JonThomasson.Blog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20181205000510_NewTagsStructure")]
+    partial class NewTagsStructure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,17 +77,23 @@ namespace JonThomasson.Blog.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.PostTag", b =>
+            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.PostTags", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("PostId");
 
                     b.Property<int>("TagId");
 
-                    b.HasKey("PostId", "TagId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("PostTag");
+                    b.ToTable("PostTags");
                 });
 
             modelBuilder.Entity("JonThomasson.Blog.Data.Entities.Tag", b =>
@@ -94,10 +102,14 @@ namespace JonThomasson.Blog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("PostId");
+
                     b.Property<string>("TagName")
                         .HasMaxLength(35);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PostId");
 
                     b.ToTable("Tags");
                 });
@@ -110,17 +122,24 @@ namespace JonThomasson.Blog.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.PostTag", b =>
+            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.PostTags", b =>
                 {
-                    b.HasOne("JonThomasson.Blog.Data.Entities.Post", "Post")
+                    b.HasOne("JonThomasson.Blog.Data.Entities.Post")
                         .WithMany("PostTags")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("JonThomasson.Blog.Data.Entities.Tag", "Tag")
-                        .WithMany("PostTags")
+                    b.HasOne("JonThomasson.Blog.Data.Entities.Tag")
+                        .WithMany("Posts")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.Tag", b =>
+                {
+                    b.HasOne("JonThomasson.Blog.Data.Entities.Post")
+                        .WithMany("Tags")
+                        .HasForeignKey("PostId");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,11 +19,14 @@ namespace JonThomasson.Blog.Data
             _ctx = ctx;
         }
 
-        public IEnumerable<Post> GetAllPosts()
+        public IEnumerable<Post> GetAllPosts(bool includeComments)
         {
-            //return _ctx.Posts.Include(c => c.Comments).ToList();
+            if (includeComments)
+            {
+                return _ctx.Posts.Include(t => t.PostTags).ThenInclude(t => t.Tag).Include(c => c.Comments).Where(p => p.IsActive == true).OrderByDescending(p => p.Id).ToList();
+            }
 
-            return _ctx.Posts
+            return _ctx.Posts.Include(t => t.PostTags).ThenInclude(t => t.Tag).Where(p => p.IsActive == true).OrderByDescending(p => p.Id)
                 .ToList();
         }
 

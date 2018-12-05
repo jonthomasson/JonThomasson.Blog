@@ -21,7 +21,7 @@ namespace JonThomasson.Blog.Data.Entities
         [MaxLength(150)]
         public string PhotoNameThumb { get; set; }
         public bool IsActive { get; set; }
-        public ICollection<PostTags> Tags { get; set; }
+        public ICollection<PostTag> PostTags { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }
 }

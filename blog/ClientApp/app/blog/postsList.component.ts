@@ -8,13 +8,14 @@ import { Post } from "../shared/post";
 })
 export class PostsList implements OnInit {
     public posts: Post[];
+    private numPosts: number = 5;
 
     constructor(private data: DataService) {
         this.posts = data.posts;
     }
 
     ngOnInit() {
-        this.data.loadPosts()
+        this.data.getLatest(this.numPosts)
             .subscribe(success => {
                 if (success) {
                     this.posts = this.data.posts;

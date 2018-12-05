@@ -29,15 +29,18 @@ namespace JonThomasson.Blog.Data
             builder.Entity<Post>()
            .Property(b => b.IsActive)
            .HasDefaultValue(0);
-            //builder.Entity<Post>().HasOne(p => p.PostTags).WithMany(t => t.);
 
-            //builder.Entity<Product>()
-            //    .Property(p => p.Price)
-            //    .HasColumnType("decimal(18,2)");
+            builder.Entity<PostTag>()
+                .HasKey(bc => new { bc.PostId, bc.TagId });
+            builder.Entity<PostTag>()
+                .HasOne(bc => bc.Post)
+                .WithMany(b => b.PostTags)
+                .HasForeignKey(bc => bc.PostId);
+            builder.Entity<PostTag>()
+                .HasOne(bc => bc.Tag)
+                .WithMany(c => c.PostTags)
+                .HasForeignKey(bc => bc.TagId);
 
-            //builder.Entity<OrderItem>()
-            //    .Property(p => p.UnitPrice)
-            //    .HasColumnType("decimal(18,2)");
         }
     }
 }

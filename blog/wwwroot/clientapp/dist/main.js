@@ -191,7 +191,7 @@ var Posts = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\">Design</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
+module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of p.postTags\">{{t.tag.tagName}}</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a href=\"javascript:void(0)\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
 
 /***/ }),
 
@@ -221,11 +221,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PostsList = /** @class */ (function () {
     function PostsList(data) {
         this.data = data;
+        this.numPosts = 5;
         this.posts = data.posts;
     }
     PostsList.prototype.ngOnInit = function () {
         var _this = this;
-        this.data.loadPosts()
+        this.data.getLatest(this.numPosts)
             .subscribe(function (success) {
             if (success) {
                 _this.posts = _this.data.posts;
@@ -279,6 +280,16 @@ var DataService = /** @class */ (function () {
     DataService.prototype.loadPosts = function () {
         var _this = this;
         return this.http.get("/api/posts")
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            _this.posts = data;
+            return true;
+        }));
+    };
+    DataService.prototype.getLatest = function (numPosts) {
+        var _this = this;
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpParams"]();
+        params = params.append('numPosts', numPosts);
+        return this.http.get("/api/posts/getLatest", { params: params })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
             _this.posts = data;
             return true;

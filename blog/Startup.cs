@@ -76,6 +76,9 @@ namespace blog
                 cfg.CreateMap<Post, PostViewModel>();
                 cfg.CreateMap<Comment, CommentViewModel>();
                 cfg.CreateMap<Tag, TagViewModel>();
+                cfg.CreateMap<Post, PostListViewModel>();
+                cfg.CreateMap<PostTag, PostTagViewModel>();
+
             });
 
             app.UseMvc(cfg =>

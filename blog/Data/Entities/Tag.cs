@@ -11,6 +11,6 @@ namespace JonThomasson.Blog.Data.Entities
         public int Id { get; set; }
         [MaxLength(35)]
         public string TagName { get; set; }
-        public ICollection<PostTags> Posts { get; set; }
+        public ICollection<PostTag> PostTags { get; set; }
     }
 }

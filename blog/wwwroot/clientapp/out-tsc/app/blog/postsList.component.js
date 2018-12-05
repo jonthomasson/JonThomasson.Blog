@@ -9,28 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from "@angular/core";
 import { DataService } from "../shared/dataService";
-var ProductList = /** @class */ (function () {
-    function ProductList(data) {
+var PostsList = /** @class */ (function () {
+    function PostsList(data) {
         this.data = data;
+        this.numPosts = 5;
         this.posts = data.posts;
     }
-    ProductList.prototype.ngOnInit = function () {
+    PostsList.prototype.ngOnInit = function () {
         var _this = this;
-        this.data.loadPosts()
+        this.data.getLatest(this.numPosts)
             .subscribe(function (success) {
             if (success) {
                 _this.posts = _this.data.posts;
             }
         });
     };
-    ProductList = __decorate([
+    PostsList = __decorate([
         Component({
             selector: "posts-list",
             templateUrl: "postsList.component.html",
         }),
         __metadata("design:paramtypes", [DataService])
-    ], ProductList);
-    return ProductList;
+    ], PostsList);
+    return PostsList;
 }());
-export { ProductList };
+export { PostsList };
 //# sourceMappingURL=postsList.component.js.map

@@ -1,10 +1,13 @@
-﻿export interface Post {
+﻿import { PostTag } from "../shared/postTag";
+
+export interface Post {
     id: number;
     creationDate: Date;
-    BodyHtml: string;
-    BodyMd: string;
+    bodyHtml: string;
+    bodyMd: string;
     title: string;
-    PhotoName: string;
-    PhotoNameThumb: string;
-    Description: string;
+    photoName: string;
+    photoNameThumb: string;
+    pescription: string;
+    postTags: PostTag[];
 }

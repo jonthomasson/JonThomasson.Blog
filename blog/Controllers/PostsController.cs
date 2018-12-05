@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace JonThomasson.Blog.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/posts")]
     public class PostsController : Controller
     {
         private readonly IBlogRepository _repository;
@@ -21,17 +21,30 @@ namespace JonThomasson.Blog.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(bool includeComments = false)
         {
             try
             {
-                //return Ok(_repository.GetAllPosts());
-                return Ok(Mapper.Map<IEnumerable<PostViewModel>>(_repository.GetAllPosts()));
+                return Ok(Mapper.Map<IEnumerable<PostViewModel>>(_repository.GetAllPosts(includeComments)));
 
             }
             catch (Exception ex)
             {
-                return BadRequest("Failed to get products");
+                return BadRequest($"Failed to get posts. {ex.Message}");
+            }
+        }
+        [HttpGet("getlatest")]
+        public IActionResult GetLatest(int numPosts)
+        {
+            try
+            {
+                var posts = _repository.GetAllPosts(false);
+
+                return Ok(Mapper.Map<IEnumerable<PostListViewModel>>(posts).Take(numPosts));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Failed to get posts. {ex.Message}");
             }
         }
     }

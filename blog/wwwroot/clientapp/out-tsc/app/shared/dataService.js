@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map } from 'rxjs/operators';
 var DataService = /** @class */ (function () {
@@ -18,6 +18,16 @@ var DataService = /** @class */ (function () {
     DataService.prototype.loadPosts = function () {
         var _this = this;
         return this.http.get("/api/posts")
+            .pipe(map(function (data) {
+            _this.posts = data;
+            return true;
+        }));
+    };
+    DataService.prototype.getLatest = function (numPosts) {
+        var _this = this;
+        var params = new HttpParams();
+        params = params.append('numPosts', numPosts);
+        return this.http.get("/api/posts/getLatest", { params: params })
             .pipe(map(function (data) {
             _this.posts = data;
             return true;
