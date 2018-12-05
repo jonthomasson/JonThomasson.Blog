@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { Posts } from "./blog/posts.component";
+import { PostDetail } from "./blog/postDetail.component";
 import { PostsList } from "./blog/postsList.component";
 
 import { DataService } from "./shared/dataService"
@@ -12,13 +13,15 @@ import { FormsModule } from "@angular/forms";
 
 let routes = [
     { path: "", component: Posts },
+    { path: "post/:id", component: PostDetail },
 ];
 
 @NgModule({
   declarations: [
       AppComponent,
       Posts,
-      PostsList
+      PostsList,
+      PostDetail
   ],
   imports: [
       BrowserModule,

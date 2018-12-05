@@ -1,6 +1,8 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { DataService } from "../shared/dataService";
 import { Post } from "../shared/post";
+import { Router } from "@angular/router";
+
 
 @Component({
     selector: "posts-list",
