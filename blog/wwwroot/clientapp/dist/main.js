@@ -150,7 +150,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">Comments</h1>\r\n        <div class=\"col-md-12\" *ngFor=\"let c of post.comments\">\r\n            <p>{{ c.text }}</p>\r\n            <p><span>{{ c.userDisplayName }} -</span> <span class=\"text-muted\">{{ c.creationDate | date:'medium' }}</span></p>\r\n        </div>\r\n        \r\n    </div>\r\n</div>\r\n\r\n\r\n"
+module.exports = "\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <img *ngIf=\"post.photoName\" src=\"assets/img/demo/{{ post.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">Comments</h1>\r\n        <div class=\"col-md-12\" *ngFor=\"let c of post.comments\">\r\n            <p>{{ c.text }}</p>\r\n            <p><span>{{ c.userDisplayName }} -</span> <span class=\"text-muted\">{{ c.creationDate | date:'medium' }}</span></p>\r\n        </div>\r\n        \r\n    </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -180,7 +180,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PostDetail = /** @class */ (function () {
     function PostDetail(data) {
         this.data = data;
-        this.postId = 2;
+        this.postId = 1;
         this.post = data.post;
     }
     PostDetail.prototype.ngOnInit = function () {
@@ -442,7 +442,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jthomasson\source\repos\JonThomasson.Blog\blog\ClientApp\main.ts */"./main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Stache\source\repos\JonThomasson.Blog\blog\ClientApp\main.ts */"./main.ts");
 
 
 /***/ })

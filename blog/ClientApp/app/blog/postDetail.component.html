@@ -7,6 +7,7 @@
             <span class="ml-1 d-none d-sm-inline"><i class="zmdi zmdi-time mr-05 color-info"></i> <span class="color-medium-dark">{{ post.creationDate | date:'longDate' }}</span></span>
             <span class="ml-1"><i class="zmdi zmdi-comments color-royal mr-05"></i> {{ post.comments.length }}</span>
         </div>
+        <img *ngIf="post.photoName" src="assets/img/demo/{{ post.photoName }}" alt="" class="img-fluid mb-4">
         <div [innerHTML]="post.bodyHtml"></div>
     </div>
 </div>

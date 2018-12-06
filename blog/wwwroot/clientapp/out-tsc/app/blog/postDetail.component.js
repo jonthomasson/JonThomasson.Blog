@@ -12,7 +12,7 @@ import { DataService } from "../shared/dataService";
 var PostDetail = /** @class */ (function () {
     function PostDetail(data) {
         this.data = data;
-        this.postId = 2;
+        this.postId = 1;
         this.post = data.post;
     }
     PostDetail.prototype.ngOnInit = function () {

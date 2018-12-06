@@ -8,7 +8,7 @@ import { Post } from "../shared/post";
 })
 export class PostDetail implements OnInit {
     public post: Post;
-    public postId: number = 2;
+    public postId: number = 1;
 
     constructor(private data: DataService) {
         this.post = data.post;
