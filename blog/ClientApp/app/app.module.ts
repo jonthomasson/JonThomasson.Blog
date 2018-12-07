@@ -14,6 +14,7 @@ import { DataService } from "./shared/dataService"
 
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { APP_BASE_HREF } from '@angular/common';
 
 let routes = [
     {
@@ -44,7 +45,8 @@ let routes = [
       })
   ],
   providers: [
-      DataService
+      DataService,
+      //{ provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
 })

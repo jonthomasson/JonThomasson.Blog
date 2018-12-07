@@ -54,7 +54,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Jon Thomasson Blog';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -144,7 +143,7 @@ var AppModule = /** @class */ (function () {
                 })
             ],
             providers: [
-                _shared_dataService__WEBPACK_IMPORTED_MODULE_10__["DataService"]
+                _shared_dataService__WEBPACK_IMPORTED_MODULE_10__["DataService"],
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
@@ -208,7 +207,7 @@ var Blog = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <img *ngIf=\"post.photoName\" src=\"assets/img/demo/{{ post.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">Comments</h1>\r\n        <div class=\"col-md-12\" *ngFor=\"let c of post.comments\">\r\n            <p>{{ c.text }}</p>\r\n            <p><span>{{ c.userDisplayName }} -</span> <span class=\"text-muted\">{{ c.creationDate | date:'medium' }}</span></p>\r\n        </div>\r\n        \r\n    </div>\r\n</div>\r\n\r\n\r\n"
+module.exports = "\r\n<div *ngIf=\"post\" class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <img *ngIf=\"post.photoName\" src=\"/assets/img/demo/{{ post.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"post\" class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">Comments</h1>\r\n        <div class=\"col-md-12\" *ngFor=\"let c of post.comments\">\r\n            <p>{{ c.text }}</p>\r\n            <p><span>{{ c.userDisplayName }} -</span> <span class=\"text-muted\">{{ c.creationDate | date:'medium' }}</span></p>\r\n        </div>\r\n        \r\n    </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -224,6 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostDetail", function() { return PostDetail; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/dataService */ "./app/shared/dataService.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -235,14 +235,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var PostDetail = /** @class */ (function () {
-    function PostDetail(data) {
+    function PostDetail(data, route) {
         this.data = data;
-        this.postId = 1;
+        this.route = route;
+        this.postId = '';
         this.post = data.post;
     }
     PostDetail.prototype.ngOnInit = function () {
         var _this = this;
+        this.postId = this.route.snapshot.paramMap.get('id');
         this.data.getPost(this.postId)
             .subscribe(function (success) {
             if (success) {
@@ -255,7 +258,7 @@ var PostDetail = /** @class */ (function () {
             selector: "post-detail",
             template: __webpack_require__(/*! ./postDetail.component.html */ "./app/blog/postDetail.component.html")
         }),
-        __metadata("design:paramtypes", [_shared_dataService__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
+        __metadata("design:paramtypes", [_shared_dataService__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], PostDetail);
     return PostDetail;
 }());
