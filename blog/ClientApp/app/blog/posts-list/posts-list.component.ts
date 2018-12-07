@@ -1,14 +1,14 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { DataService } from "../shared/dataService";
+import { DataService } from "../../shared/dataService";
 import { Post } from "../shared/post";
 import { Router } from "@angular/router";
 
 
 @Component({
     selector: "posts-list",
-    templateUrl: "postsList.component.html",
+    templateUrl: "posts-list.component.html",
 })
-export class PostsList implements OnInit {
+export class PostsListComponent implements OnInit {
     public posts: Post[];
     private numPosts: number = 5;
 

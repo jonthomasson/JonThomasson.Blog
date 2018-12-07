@@ -8,18 +8,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
-import { Posts } from "./blog/posts.component";
-import { PostDetail } from "./blog/postDetail.component";
-import { PostsList } from "./blog/postsList.component";
+import { PostsComponent } from "./blog/posts/posts.component";
+import { PostDetailComponent } from "./blog/post-detail/post-detail.component";
+import { PostsListComponent } from "./blog/posts-list/posts-list.component";
 import { Header } from "./shared/layout/header.component";
 import { Footer } from "./shared/layout/footer.component";
-import { Blog } from "./blog/blog.component";
+import { BlogComponent } from "./blog/blog/blog.component";
 import { DataService } from "./shared/dataService";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { AboutComponent } from './home/about/about.component';
 var routes = [
-    { path: "", component: Blog },
-    { path: "post/:id", component: PostDetail },
+    {
+        path: "blog", component: BlogComponent, children: [
+            { path: "", component: PostsListComponent },
+            { path: "post/:id", component: PostDetailComponent }
+        ]
+    }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -28,12 +33,13 @@ var AppModule = /** @class */ (function () {
         NgModule({
             declarations: [
                 AppComponent,
-                Posts,
-                PostsList,
-                PostDetail,
+                PostsComponent,
+                PostsListComponent,
+                PostDetailComponent,
                 Header,
                 Footer,
-                Blog
+                BlogComponent,
+                AboutComponent
             ],
             imports: [
                 BrowserModule,
@@ -45,7 +51,7 @@ var AppModule = /** @class */ (function () {
                 })
             ],
             providers: [
-                DataService
+                DataService,
             ],
             bootstrap: [AppComponent]
         })

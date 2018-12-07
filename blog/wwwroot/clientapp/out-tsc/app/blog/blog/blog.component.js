@@ -4,18 +4,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { Component } from '@angular/core';
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+import { Component } from "@angular/core";
+var BlogComponent = /** @class */ (function () {
+    function BlogComponent() {
     }
-    AppComponent = __decorate([
+    BlogComponent = __decorate([
         Component({
-            selector: 'main-site',
-            templateUrl: './app.component.html',
-            styles: []
+            selector: "the-blog",
+            templateUrl: "blog.component.html"
         })
-    ], AppComponent);
-    return AppComponent;
+    ], BlogComponent);
+    return BlogComponent;
 }());
-export { AppComponent };
-//# sourceMappingURL=app.component.js.map
+export { BlogComponent };
+//# sourceMappingURL=blog.component.js.map

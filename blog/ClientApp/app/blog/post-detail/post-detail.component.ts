@@ -1,13 +1,13 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { DataService } from "../shared/dataService";
+import { DataService } from "../../shared/dataService";
 import { Post } from "../shared/post";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: "post-detail",
-    templateUrl: "postDetail.component.html"
+    templateUrl: "post-detail.component.html"
 })
-export class PostDetail implements OnInit {
+export class PostDetailComponent implements OnInit {
     public post: Post;
     public postId: string = '';
 

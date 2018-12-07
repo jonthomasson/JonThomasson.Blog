@@ -1,4 +1,4 @@
-﻿import { PostTag } from "../shared/postTag";
+﻿import { PostTag } from "../shared/post-tag";
 
 export interface Post {
     id: number;

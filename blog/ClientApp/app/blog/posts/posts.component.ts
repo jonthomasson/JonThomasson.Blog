@@ -4,6 +4,6 @@
     selector: "blog-posts",
     templateUrl: "posts.component.html"
 })
-export class Posts {
+export class PostsComponent {
 
 }
