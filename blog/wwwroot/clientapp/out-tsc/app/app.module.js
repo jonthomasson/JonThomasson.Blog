@@ -11,11 +11,14 @@ import { AppComponent } from './app.component';
 import { Posts } from "./blog/posts.component";
 import { PostDetail } from "./blog/postDetail.component";
 import { PostsList } from "./blog/postsList.component";
+import { Header } from "./shared/layout/header.component";
+import { Footer } from "./shared/layout/footer.component";
+import { Blog } from "./blog/blog.component";
 import { DataService } from "./shared/dataService";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 var routes = [
-    { path: "", component: Posts },
+    { path: "", component: Blog },
     { path: "post/:id", component: PostDetail },
 ];
 var AppModule = /** @class */ (function () {
@@ -27,7 +30,10 @@ var AppModule = /** @class */ (function () {
                 AppComponent,
                 Posts,
                 PostsList,
-                PostDetail
+                PostDetail,
+                Header,
+                Footer,
+                Blog
             ],
             imports: [
                 BrowserModule,

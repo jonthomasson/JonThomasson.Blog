@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = "<layout-header></layout-header>\r\n<router-outlet></router-outlet>\r\n<layout-footer></layout-footer>"
 
 /***/ }),
 
@@ -58,7 +58,7 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'the-blog',
+            selector: 'main-site',
             template: __webpack_require__(/*! ./app.component.html */ "./app/app.component.html"),
             styles: []
         })
@@ -87,9 +87,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blog/posts.component */ "./app/blog/posts.component.ts");
 /* harmony import */ var _blog_postDetail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blog/postDetail.component */ "./app/blog/postDetail.component.ts");
 /* harmony import */ var _blog_postsList_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog/postsList.component */ "./app/blog/postsList.component.ts");
-/* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _shared_layout_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/layout/header.component */ "./app/shared/layout/header.component.ts");
+/* harmony import */ var _shared_layout_footer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/layout/footer.component */ "./app/shared/layout/footer.component.ts");
+/* harmony import */ var _blog_blog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blog/blog.component */ "./app/blog/blog.component.ts");
+/* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -106,9 +109,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var routes = [
-    { path: "", component: _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__["Posts"] },
-    { path: "post/:id", component: _blog_postDetail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetail"] },
+    {
+        path: "blog", component: _blog_blog_component__WEBPACK_IMPORTED_MODULE_9__["Blog"], children: [
+            { path: "", component: _blog_postsList_component__WEBPACK_IMPORTED_MODULE_6__["PostsList"] },
+            { path: "post/:id", component: _blog_postDetail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetail"] }
+        ]
+    }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -119,24 +129,72 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                 _blog_posts_component__WEBPACK_IMPORTED_MODULE_4__["Posts"],
                 _blog_postsList_component__WEBPACK_IMPORTED_MODULE_6__["PostsList"],
-                _blog_postDetail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetail"]
+                _blog_postDetail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetail"],
+                _shared_layout_header_component__WEBPACK_IMPORTED_MODULE_7__["Header"],
+                _shared_layout_footer_component__WEBPACK_IMPORTED_MODULE_8__["Footer"],
+                _blog_blog_component__WEBPACK_IMPORTED_MODULE_9__["Blog"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, {
+                _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(routes, {
                     useHash: true,
                     enableTracing: false // for Debugging of the Routes
                 })
             ],
             providers: [
-                _shared_dataService__WEBPACK_IMPORTED_MODULE_7__["DataService"]
+                _shared_dataService__WEBPACK_IMPORTED_MODULE_10__["DataService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/blog/blog.component.html":
+/*!**************************************!*\
+  !*** ./app/blog/blog.component.html ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-8\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n            <div class=\"card animated fadeInUp animation-delay-7\">\r\n                <div class=\"ms-hero-bg-info ms-hero-img-mountain\">\r\n                    <h3 class=\"color-white index-1 text-center no-m pt-4\">Jon Thomasson</h3>\r\n                    <div class=\"color-medium index-1 text-center np-m\">@jon_thomasson</div>\r\n                    <img src=\"/assets/img/demo/headshot300x300.jpg\" alt=\"...\" class=\"img-avatar-circle\">\r\n                </div>\r\n                <div class=\"card-body overflow-hidden pt-4 text-center\">\r\n                    <h3 class=\"color-primary\">About me</h3>\r\n                    <p>Husband, father of 4, and a cancer survivor. I'm a software developer by day, with a passion for designing hardware and electronics by night. Callsign: KF6LMD</p>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-raised btn-circle-xs mt-1 mr-1 no-mr-md btn-github\"><i class=\"zmdi zmdi-github\"></i></a>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-raised btn-circle-xs mt-1 mr-1 no-mr-md btn-youtube\"><i class=\"zmdi zmdi-youtube\"></i></a>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-raised btn-circle-xs mt-1 mr-1 no-mr-md btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-raised btn-circle-xs mt-1 mr-1 no-mr-md btn-linkedin\"><i class=\"zmdi zmdi-linkedin\"></i></a>\r\n                </div>\r\n            </div>\r\n            <div class=\"card card-primary animated fadeInUp animation-delay-7\">\r\n                <div class=\"card-header\">\r\n                    <h3 class=\"card-title\"><i class=\"zmdi zmdi-apps\"></i> Navigation</h3>\r\n                </div>\r\n                <div class=\"card-tabs\">\r\n                    <ul class=\"nav nav-tabs nav-tabs-transparent indicator-primary nav-tabs-full nav-tabs-4\" role=\"tablist\">\r\n                        <li class=\"nav-item\"><a href=\"#favorite\" aria-controls=\"favorite\" role=\"tab\" data-toggle=\"tab\" class=\"nav-link withoutripple active\"><i class=\"no-mr zmdi zmdi-star\"></i></a></li>\r\n                        <li class=\"nav-item\"><a href=\"#categories\" aria-controls=\"categories\" role=\"tab\" data-toggle=\"tab\" class=\"nav-link withoutripple\"><i class=\"no-mr zmdi zmdi-folder\"></i></a></li>\r\n                        <li class=\"nav-item\"><a href=\"#archives\" aria-controls=\"archives\" role=\"tab\" data-toggle=\"tab\" class=\"nav-link withoutripple\"><i class=\"no-mr zmdi zmdi-time\"></i></a></li>\r\n                        <li class=\"nav-item\"><a href=\"#tags\" aria-controls=\"tags\" role=\"tab\" data-toggle=\"tab\" class=\"nav-link withoutripple\"><i class=\"no-mr zmdi zmdi-tag-more\"></i></a></li>\r\n                    </ul>\r\n                </div>\r\n                <div class=\"tab-content\">\r\n                    <div role=\"tabpanel\" class=\"tab-pane fade active show\" id=\"favorite\">\r\n                        <div class=\"card-body overflow-hidden\">\r\n                            <div class=\"ms-media-list\">\r\n                                <div class=\"media mb-2\">\r\n                                    <div class=\"media-left media-middle\">\r\n                                        <a href=\"#\">\r\n                                            <img class=\"d-flex mr-3 media-object media-object-circle\" src=\"assets/img/demo/p75.jpg\" alt=\"...\">\r\n                                        </a>\r\n                                    </div>\r\n                                    <div class=\"media-body\">\r\n                                        <a href=\"javascript:void(0)\" class=\"media-heading\">Lorem ipsum dolor sit amet in consectetur adipisicing</a>\r\n                                        <div class=\"media-footer text-small\">\r\n                                            <span class=\"mr-1\"><i class=\"zmdi zmdi-time color-info mr-05\"></i> August 18, 2016</span>\r\n                                            <span><i class=\"zmdi zmdi-folder-outline color-success mr-05\"></i> <a href=\"javascript:void(0)\">Design</a></span>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"media mb-2\">\r\n                                    <div class=\"media-left media-middle\">\r\n                                        <a href=\"#\">\r\n                                            <img class=\"d-flex mr-3 media-object media-object-circle\" src=\"assets/img/demo/p75.jpg\" alt=\"...\">\r\n                                        </a>\r\n                                    </div>\r\n                                    <div class=\"media-body\">\r\n                                        <a href=\"javascript:void(0)\" class=\"media-heading\">Nemo enim ipsam voluptatem quia voluptas sit aspernatur</a>\r\n                                        <div class=\"media-footer text-small\">\r\n                                            <span class=\"mr-1\"><i class=\"zmdi zmdi-time color-info mr-05\"></i> August 18, 2016</span>\r\n                                            <span><i class=\"zmdi zmdi-folder-outline color-danger mr-05\"></i> <a href=\"javascript:void(0)\">Productivity</a></span>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"media\">\r\n                                    <div class=\"media-left media-middle\">\r\n                                        <a href=\"#\">\r\n                                            <img class=\"d-flex mr-3 media-object media-object-circle\" src=\"assets/img/demo/p75.jpg\" alt=\"...\">\r\n                                        </a>\r\n                                    </div>\r\n                                    <div class=\"media-body\">\r\n                                        <a href=\"javascript:void(0)\" class=\"media-heading\">inventore veritatis et vitae quasi architecto beatae </a>\r\n                                        <div class=\"media-footer text-small\">\r\n                                            <span class=\"mr-1\"><i class=\"zmdi zmdi-time color-info mr-05\"></i> August 18, 2016</span>\r\n                                            <span><i class=\"zmdi zmdi-folder-outline color-royal-light mr-05\"></i> <a href=\"javascript:void(0)\">Resources</a></span>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div role=\"tabpanel\" class=\"tab-pane fade\" id=\"categories\">\r\n                        <div class=\"list-group\">\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\" color-info zmdi zmdi-cocktail\"></i>Design <span class=\"ml-auto badge-pill badge-pill-info\">25</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\" color-warning zmdi zmdi-collection-image\"></i> Graphics <span class=\"ml-auto badge-pill badge-pill-warning\">14</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\" color-danger zmdi zmdi-case-check\"></i> Productivity <span class=\"ml-auto badge-pill badge-pill-danger\">7</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\" color-royal zmdi zmdi-folder-star-alt\"></i>Resources <span class=\"ml-auto badge-pill badge-pill-royal\">67</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\" color-success zmdi zmdi-play-circle-outline\"></i>Multimedia <span class=\"ml-auto badge-pill badge-pill-success\">32</span></a>\r\n                        </div>\r\n                    </div>\r\n                    <div role=\"tabpanel\" class=\"tab-pane fade\" id=\"archives\">\r\n                        <div class=\"list-group\">\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\"zmdi zmdi-calendar\"></i> January 2016 <span class=\"ml-auto badge-pill\">25</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\"zmdi zmdi-calendar\"></i> February 2016 <span class=\"ml-auto badge-pill\">14</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\"zmdi zmdi-calendar\"></i> March 2016 <span class=\"ml-auto badge-pill\">9</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\"zmdi zmdi-calendar\"></i> April 2016 <span class=\"ml-auto badge-pill\">12</span></a>\r\n                            <a href=\"javascript:void(0)\" class=\"list-group-item list-group-item-action withripple\"><i class=\"zmdi zmdi-calendar\"></i> June 2016 <span class=\"ml-auto badge-pill\">65</span></a>\r\n                        </div>\r\n                    </div>\r\n                    <div role=\"tabpanel\" class=\"tab-pane fade\" id=\"tags\">\r\n                        <div class=\"card-body overflow-hidden overflow-hidden text-center\">\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Design</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Productivity</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Web</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Resources</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Multimedia</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">HTML5</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">CSS3</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Javascript</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Jquery</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Bootstrap</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Angular</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Gulp</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Atom</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Fonts</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Pictures</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Developers</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Code</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">SASS</a>\r\n                            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-primary\">Less</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div> <!-- container -->"
+
+/***/ }),
+
+/***/ "./app/blog/blog.component.ts":
+/*!************************************!*\
+  !*** ./app/blog/blog.component.ts ***!
+  \************************************/
+/*! exports provided: Blog */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Blog", function() { return Blog; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var Blog = /** @class */ (function () {
+    function Blog() {
+    }
+    Blog = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "the-blog",
+            template: __webpack_require__(/*! ./blog.component.html */ "./app/blog/blog.component.html")
+        })
+    ], Blog);
+    return Blog;
 }());
 
 
@@ -258,7 +316,7 @@ var Posts = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of p.postTags\">{{t.tag.tagName}}</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a  [routerLink]=\"['post',p.id]\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
+module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of p.postTags\">{{t.tag.tagName}}</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a [routerLink]=\"['post',p.id]\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
 
 /***/ }),
 
@@ -375,6 +433,96 @@ var DataService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
     ], DataService);
     return DataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/shared/layout/footer.component.html":
+/*!*************************************************!*\
+  !*** ./app/shared/layout/footer.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<aside class=\"ms-footbar\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Subscribe</h3>\r\n                    <p class=\"\">Sign up for blog updates.</p>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <form>\r\n                        <div class=\"form-group label-floating mt-2 mb-1\">\r\n                            <div class=\"input-group ms-input-subscribe\">\r\n                                <label class=\"control-label\" for=\"ms-subscribe\"><i class=\"zmdi zmdi-email\"></i> Email Adress</label>\r\n                                <input type=\"email\" id=\"ms-subscribe\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <button class=\"ms-subscribre-btn\" type=\"button\">Subscribe</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col ms-footer-text-right\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Social Media</h3>\r\n                    <div class=\"ms-footbar-social\">\r\n                        <a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a>\r\n                        <a href=\"javascript:void(0)\" class=\"btn-circle btn-youtube\"><i class=\"zmdi zmdi-youtube-play\"></i></a>\r\n                        <a href=\"javascript:void(0)\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-github\"></i></a>\r\n                        <a href=\"javascript:void(0)\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-linkedin\"></i></a>\r\n                        <a href=\"javascript:void(0)\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</aside>\r\n<footer class=\"ms-footer\">\r\n    <div class=\"container\">\r\n        <p>Copyright &copy; Jon Thomasson 2019</p>\r\n    </div>\r\n</footer>\r\n<div class=\"btn-back-top\">\r\n    <a href=\"#\" data-scroll id=\"back-top\" class=\"btn-circle btn-circle-primary btn-circle-sm btn-circle-raised \"><i class=\"zmdi zmdi-long-arrow-up\"></i></a>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./app/shared/layout/footer.component.ts":
+/*!***********************************************!*\
+  !*** ./app/shared/layout/footer.component.ts ***!
+  \***********************************************/
+/*! exports provided: Footer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return Footer; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var Footer = /** @class */ (function () {
+    function Footer() {
+    }
+    Footer = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "layout-footer",
+            template: __webpack_require__(/*! ./footer.component.html */ "./app/shared/layout/footer.component.html")
+        })
+    ], Footer);
+    return Footer;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/shared/layout/header.component.html":
+/*!*************************************************!*\
+  !*** ./app/shared/layout/header.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "    <header class=\"ms-header ms-header-primary\">\r\n        <!--ms-header-primary-->\r\n        <div class=\"container container-full\">\r\n            <div class=\"ms-title\">\r\n                <a href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot50x50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                    <h1 class=\"animated fadeInRight animation-delay-6\">Jon <span>Thomasson</span></h1>\r\n                </a>\r\n            </div>\r\n            <div class=\"header-right\">\r\n                <div class=\"share-menu\">\r\n                    <ul class=\"share-menu-list\">\r\n                        <li class=\"animated fadeInRight animation-delay-3\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-google\"><i class=\"zmdi zmdi-google\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-2\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-facebook\"><i class=\"zmdi zmdi-facebook\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-1\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a></li>\r\n                    </ul>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-primary animated zoomInDown animation-delay-7\"><i class=\"zmdi zmdi-share\"></i></a>\r\n                </div>\r\n                <form class=\"search-form animated zoomInDown animation-delay-9\">\r\n                    <input id=\"search-box\" type=\"text\" class=\"search-input\" placeholder=\"Search...\" name=\"q\" />\r\n                    <label for=\"search-box\"><i class=\"zmdi zmdi-search\"></i></label>\r\n                </form>\r\n                <a href=\"javascript:void(0)\" class=\"btn-circle btn-rss animated zoomInDown animation-delay-9\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <nav class=\"navbar navbar-expand-md  navbar-static ms-navbar ms-navbar-primary\">\r\n        <div class=\"container container-full\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot35x35.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                 \r\n                    <span class=\"ms-title\">Jon <strong>Thomasson</strong></span>\r\n                </a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"ms-navbar\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" routerLink=\"blog\" routerLinkActive=\"active\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" href=\"#\">About</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" href=\"#\">Contact Me</a>\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n        </div> <!-- container -->\r\n    </nav>\r\n"
+
+/***/ }),
+
+/***/ "./app/shared/layout/header.component.ts":
+/*!***********************************************!*\
+  !*** ./app/shared/layout/header.component.ts ***!
+  \***********************************************/
+/*! exports provided: Header */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var Header = /** @class */ (function () {
+    function Header() {
+    }
+    Header = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "layout-header",
+            template: __webpack_require__(/*! ./header.component.html */ "./app/shared/layout/header.component.html")
+        })
+    ], Header);
+    return Header;
 }());
 
 

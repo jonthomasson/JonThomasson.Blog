@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { Posts } from "./blog/posts.component";
 import { PostDetail } from "./blog/postDetail.component";
 import { PostsList } from "./blog/postsList.component";
+import { Header } from "./shared/layout/header.component";
+import { Footer } from "./shared/layout/footer.component";
+import { Blog } from "./blog/blog.component";
+
 
 import { DataService } from "./shared/dataService"
 
@@ -12,8 +16,12 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 
 let routes = [
-    { path: "", component: Posts },
-    { path: "post/:id", component: PostDetail },
+    {
+        path: "blog", component: Blog, children: [
+            { path: "", component: PostsList },
+            { path: "post/:id", component: PostDetail }
+        ]
+    }
 ];
 
 @NgModule({
@@ -21,7 +29,10 @@ let routes = [
       AppComponent,
       Posts,
       PostsList,
-      PostDetail
+      PostDetail,
+      Header,
+      Footer,
+      Blog
   ],
   imports: [
       BrowserModule,

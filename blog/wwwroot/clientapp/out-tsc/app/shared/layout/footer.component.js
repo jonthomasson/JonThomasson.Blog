@@ -4,19 +4,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { Component } from '@angular/core';
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'Jon Thomasson Blog';
+import { Component } from "@angular/core";
+var Footer = /** @class */ (function () {
+    function Footer() {
     }
-    AppComponent = __decorate([
+    Footer = __decorate([
         Component({
-            selector: 'main-site',
-            templateUrl: './app.component.html',
-            styles: []
+            selector: "layout-footer",
+            templateUrl: "footer.component.html"
         })
-    ], AppComponent);
-    return AppComponent;
+    ], Footer);
+    return Footer;
 }());
-export { AppComponent };
-//# sourceMappingURL=app.component.js.map
+export { Footer };
+//# sourceMappingURL=footer.component.js.map
