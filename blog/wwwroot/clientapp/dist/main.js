@@ -93,6 +93,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/about/about.component */ "./app/home/about/about.component.ts");
+/* harmony import */ var _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/contact/contact.component */ "./app/home/contact/contact.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -113,13 +114,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: "blog", component: _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_9__["BlogComponent"], children: [
             { path: "", component: _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_6__["PostsListComponent"] },
             { path: "post/:id", component: _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetailComponent"] }
         ]
-    }
+    },
+    { path: "contact", component: _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_14__["ContactComponent"] },
+    { path: "about", component: _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -134,7 +138,8 @@ var AppModule = /** @class */ (function () {
                 _shared_layout_header_component__WEBPACK_IMPORTED_MODULE_7__["Header"],
                 _shared_layout_footer_component__WEBPACK_IMPORTED_MODULE_8__["Footer"],
                 _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_9__["BlogComponent"],
-                _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"]
+                _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"],
+                _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_14__["ContactComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -396,7 +401,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<div class=\"ms-hero-page-override ms-hero-img-city ms-hero-bg-primary\">\r\n    <div class=\"container\">\r\n        <div class=\"text-center\">\r\n            <span class=\"ms-logo ms-logo-lg ms-logo-white center-block mb-2 mt-2 animated zoomInDown animation-delay-5\">M</span>\r\n            <h1 class=\"no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-5\">Material<span>Style</span></h1>\r\n            <p class=\"lead lead-lg color-white text-center center-block mt-2 mw-800 text-uppercase fw-300 animated fadeInUp animation-delay-7\">Discover our projects and the <span class=\"color-warning\">rigorous process</span> of creation. Our principles are creativity, design, experience and knowledge.</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"container\">\r\n    <div class=\"card card-hero animated slideInUp animation-delay-8 mb-6\">\r\n        <div class=\"card-body\">\r\n            <h2 class=\"color-primary\">About Us</h2>\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-6 text-justify\">\r\n                    <p class=\"dropcaps\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ipsa id saepe, quos ullam fugiat velit pariatur alias cumque. Architecto et vitae perferendis cumque ratione officiis? Quas quod, rerum dolores qui. Iste magnam ipsam laborum. Natus quis maiores est qui maxime, consectetur ipsam esse quaerat facilis quos repudiandae eaque magni laboriosam amet.</p>\r\n                    <p>Perferendis, blanditiis unde fugiat voluptas molestias velit asperiores rerum ipsam animi eum temporibus at numquam, nobis voluptates minus maxime cum obcaecati! Tenetur sit corporis laudantium inventore officia officiis odio repellat dolore quos repudiandae voluptas ad facere, amet placeat animi voluptatem distinctio beatae.</p>\r\n                </div>\r\n                <div class=\"col-lg-6 text-justify\">\r\n                    <p>Non sequi adipisci nostrum natus rem accusamus itaque repellendus illum neque! Voluptate, error commodi a quaerat eveniet tenetur reiciendis nulla doloremque iusto repellat quis asperiores, quibusdam architecto culpa facere aliquam placeat eaque amet, optio nobis alias maiores. Nulla perferendis impedit hic placeat veniam distinctio error.</p>\r\n                    <p>Tenetur numquam a, nesciunt neque odit amet, qui quibusdam natus assumenda quas omnis, aspernatur quisquam nobis illum ea distinctio tempora quaerat. Aperiam cumque, eveniet similique praesentium, temporibus, id quis labore aspernatur quod placeat ducimus fuga consequuntur numquam autem. Voluptates repellat.</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -435,6 +440,69 @@ var AboutComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], AboutComponent);
     return AboutComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/home/contact/contact.component.css":
+/*!************************************************!*\
+  !*** ./app/home/contact/contact.component.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./app/home/contact/contact.component.html":
+/*!*************************************************!*\
+  !*** ./app/home/contact/contact.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ms-hero-page-override ms-hero-img-team ms-hero-bg-primary\">\r\n    <div class=\"container\">\r\n        <div class=\"text-center\">\r\n            <h1 class=\"no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-5\">Contact Us</h1>\r\n            <p class=\"lead lead-lg color-light text-center center-block mt-2 mw-800 text-uppercase fw-300 animated fadeInUp animation-delay-7\">Do you need a boost in your project? <br>Contact us we will help you to finish your dream.</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"container\">\r\n    <div class=\"card card-hero animated fadeInUp animation-delay-7\">\r\n        <div class=\"card-body\">\r\n            <form class=\"form-horizontal\">\r\n                <fieldset class=\"container\">\r\n                    <div class=\"form-group row\">\r\n                        <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Name</label>\r\n                        <div class=\"col-lg-9\">\r\n                            <input type=\"text\" class=\"form-control\" id=\"inputName\" placeholder=\"Name\">\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group row\">\r\n                        <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Email</label>\r\n                        <div class=\"col-lg-9\">\r\n                            <input type=\"email\" class=\"form-control\" id=\"inputEmail\" placeholder=\"Email\">\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group row\">\r\n                        <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Subject</label>\r\n                        <div class=\"col-lg-9\">\r\n                            <input type=\"text\" class=\"form-control\" id=\"inputSubject\" placeholder=\"Subject\">\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group row\">\r\n                        <label for=\"textArea\" class=\"col-lg-2 control-label\">Message</label>\r\n                        <div class=\"col-lg-9\">\r\n                            <textarea class=\"form-control\" rows=\"3\" id=\"textArea\" placeholder=\"Yout message...\"></textarea>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group row justify-content-end\">\r\n                        <div class=\"col-lg-10\">\r\n                            <button type=\"submit\" class=\"btn btn-raised btn-primary\">Submit</button>\r\n                            <button type=\"button\" class=\"btn btn-danger\">Cancel</button>\r\n                        </div>\r\n                    </div>\r\n                </fieldset>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./app/home/contact/contact.component.ts":
+/*!***********************************************!*\
+  !*** ./app/home/contact/contact.component.ts ***!
+  \***********************************************/
+/*! exports provided: ContactComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContactComponent = /** @class */ (function () {
+    function ContactComponent() {
+    }
+    ContactComponent.prototype.ngOnInit = function () {
+    };
+    ContactComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-contact',
+            template: __webpack_require__(/*! ./contact.component.html */ "./app/home/contact/contact.component.html"),
+            styles: [__webpack_require__(/*! ./contact.component.css */ "./app/home/contact/contact.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ContactComponent);
+    return ContactComponent;
 }());
 
 
@@ -560,7 +628,7 @@ var Footer = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    <header class=\"ms-header ms-header-primary\">\r\n        <!--ms-header-primary-->\r\n        <div class=\"container container-full\">\r\n            <div class=\"ms-title\">\r\n                <a href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot50x50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                    <h1 class=\"animated fadeInRight animation-delay-6\">Jon <span>Thomasson</span></h1>\r\n                </a>\r\n            </div>\r\n            <div class=\"header-right\">\r\n                <div class=\"share-menu\">\r\n                    <ul class=\"share-menu-list\">\r\n                        <li class=\"animated fadeInRight animation-delay-3\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-google\"><i class=\"zmdi zmdi-google\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-2\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-facebook\"><i class=\"zmdi zmdi-facebook\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-1\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a></li>\r\n                    </ul>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-primary animated zoomInDown animation-delay-7\"><i class=\"zmdi zmdi-share\"></i></a>\r\n                </div>\r\n                <form class=\"search-form animated zoomInDown animation-delay-9\">\r\n                    <input id=\"search-box\" type=\"text\" class=\"search-input\" placeholder=\"Search...\" name=\"q\" />\r\n                    <label for=\"search-box\"><i class=\"zmdi zmdi-search\"></i></label>\r\n                </form>\r\n                <a href=\"javascript:void(0)\" class=\"btn-circle btn-rss animated zoomInDown animation-delay-9\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <nav class=\"navbar navbar-expand-md  navbar-static ms-navbar ms-navbar-primary\">\r\n        <div class=\"container container-full\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot35x35.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                 \r\n                    <span class=\"ms-title\">Jon <strong>Thomasson</strong></span>\r\n                </a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"ms-navbar\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" routerLink=\"blog\" routerLinkActive=\"active\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" href=\"#\">About</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link\" href=\"#\">Contact Me</a>\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n        </div> <!-- container -->\r\n    </nav>\r\n"
+module.exports = "    <header class=\"ms-header ms-header-primary\">\r\n        <!--ms-header-primary-->\r\n        <div class=\"container container-full\">\r\n            <div class=\"ms-title\">\r\n                <a href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot50x50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                    <h1 class=\"animated fadeInRight animation-delay-6\">Jon <span>Thomasson</span></h1>\r\n                </a>\r\n            </div>\r\n            <div class=\"header-right\">\r\n                <div class=\"share-menu\">\r\n                    <ul class=\"share-menu-list\">\r\n                        <li class=\"animated fadeInRight animation-delay-3\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-google\"><i class=\"zmdi zmdi-google\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-2\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-facebook\"><i class=\"zmdi zmdi-facebook\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-1\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a></li>\r\n                    </ul>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-primary animated zoomInDown animation-delay-7\"><i class=\"zmdi zmdi-share\"></i></a>\r\n                </div>\r\n                <form class=\"search-form animated zoomInDown animation-delay-9\">\r\n                    <input id=\"search-box\" type=\"text\" class=\"search-input\" placeholder=\"Search...\" name=\"q\" />\r\n                    <label for=\"search-box\"><i class=\"zmdi zmdi-search\"></i></label>\r\n                </form>\r\n                <a href=\"javascript:void(0)\" class=\"btn-circle btn-rss animated zoomInDown animation-delay-9\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <nav class=\"navbar navbar-expand-md  navbar-static ms-navbar ms-navbar-primary\">\r\n        <div class=\"container container-full\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot35x35.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                 \r\n                    <span class=\"ms-title\">Jon <strong>Thomasson</strong></span>\r\n                </a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"ms-navbar\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"blog\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"about\" >About</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"contact\" >Contact Me</a>\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n        </div> <!-- container -->\r\n    </nav>\r\n"
 
 /***/ }),
 

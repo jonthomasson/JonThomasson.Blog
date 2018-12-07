@@ -8,14 +8,12 @@ import { PostsListComponent } from "./blog/posts-list/posts-list.component";
 import { Header } from "./shared/layout/header.component";
 import { Footer } from "./shared/layout/footer.component";
 import { BlogComponent } from "./blog/blog/blog.component";
-
-
 import { DataService } from "./shared/dataService"
-
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from '@angular/common';
 import { AboutComponent } from './home/about/about.component';
+import { ContactComponent } from './home/contact/contact.component';
 
 let routes = [
     {
@@ -23,7 +21,9 @@ let routes = [
             { path: "", component: PostsListComponent },
             { path: "post/:id", component: PostDetailComponent }
         ]
-    }
+    },
+    { path: "contact", component: ContactComponent },
+    { path: "about", component: AboutComponent },
 ];
 
 @NgModule({
@@ -35,7 +35,8 @@ let routes = [
       Header,
       Footer,
       BlogComponent,
-      AboutComponent
+      AboutComponent,
+      ContactComponent
   ],
   imports: [
       BrowserModule,
