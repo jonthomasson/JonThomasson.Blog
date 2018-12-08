@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\blog\posts\posts.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\shared\dataService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\blog\shared\data-service.ts" />
     <TypeScriptCompile Include="ClientApp\app\blog\shared\post.ts" />
   </ItemGroup>
 

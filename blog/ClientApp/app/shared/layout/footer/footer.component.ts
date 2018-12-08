@@ -4,6 +4,6 @@
     selector: "layout-footer",
     templateUrl: "footer.component.html"
 })
-export class Footer {
+export class FooterComponent {
 
 }

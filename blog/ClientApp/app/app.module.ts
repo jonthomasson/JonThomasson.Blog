@@ -2,14 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
-import { PostsComponent } from "./blog/posts/posts.component";
-import { PostDetailComponent } from "./blog/post-detail/post-detail.component";
-import { PostsListComponent } from "./blog/posts-list/posts-list.component";
-import { Header } from "./shared/layout/header.component";
-import { Footer } from "./shared/layout/footer.component";
-import { BlogComponent } from "./blog/blog/blog.component";
-import { DataService } from "./shared/dataService"
+import { FooterComponent } from "./shared/layout/footer/footer.component";
+import { HeaderComponent } from "./shared/layout/header/header.component";
+
 import { AppRoutingModule } from './app-routing.module';
+import { BlogModule } from './blog/blog.module';
 
 import { FormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from '@angular/common';
@@ -19,12 +16,8 @@ import { ContactComponent } from './home/contact/contact.component';
 @NgModule({
   declarations: [
       AppComponent,
-      PostsComponent,
-      PostsListComponent,
-      PostDetailComponent,
-      Header,
-      Footer,
-      BlogComponent,
+      HeaderComponent,
+      FooterComponent,
       AboutComponent,
       ContactComponent
   ],
@@ -32,11 +25,8 @@ import { ContactComponent } from './home/contact/contact.component';
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      AppRoutingModule
-  ],
-  providers: [
-      DataService,
-      //{ provide: APP_BASE_HREF, useValue: '/' }
+      AppRoutingModule,
+      BlogModule
   ],
   bootstrap: [AppComponent] 
 })

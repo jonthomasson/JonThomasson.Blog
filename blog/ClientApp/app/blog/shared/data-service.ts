@@ -2,7 +2,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs"
 import { map } from 'rxjs/operators';
-import { Post } from "../blog/shared/post";
+import { Post } from "../../blog/shared/post";
 
 @Injectable()
 export class DataService {

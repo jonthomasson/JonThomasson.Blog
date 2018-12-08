@@ -4,6 +4,6 @@
     selector: "layout-header",
     templateUrl: "header.component.html"
 })
-export class Header {
+export class HeaderComponent {
 
 }
