@@ -9,22 +9,12 @@ import { Header } from "./shared/layout/header.component";
 import { Footer } from "./shared/layout/footer.component";
 import { BlogComponent } from "./blog/blog/blog.component";
 import { DataService } from "./shared/dataService"
-import { RouterModule } from "@angular/router";
+import { AppRoutingModule } from './app-routing.module';
+
 import { FormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from '@angular/common';
 import { AboutComponent } from './home/about/about.component';
 import { ContactComponent } from './home/contact/contact.component';
-
-let routes = [
-    {
-        path: "blog", component: BlogComponent, children: [
-            { path: "", component: PostsListComponent },
-            { path: "post/:id", component: PostDetailComponent }
-        ]
-    },
-    { path: "contact", component: ContactComponent },
-    { path: "about", component: AboutComponent },
-];
 
 @NgModule({
   declarations: [
@@ -42,15 +32,12 @@ let routes = [
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      RouterModule.forRoot(routes, {
-          useHash: true,
-          enableTracing: false // for Debugging of the Routes
-      })
+      AppRoutingModule
   ],
   providers: [
       DataService,
       //{ provide: APP_BASE_HREF, useValue: '/' }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

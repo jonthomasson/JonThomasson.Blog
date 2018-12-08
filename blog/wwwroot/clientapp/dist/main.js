@@ -23,6 +23,69 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./app/app-routing.module.ts":
+/*!***********************************!*\
+  !*** ./app/app-routing.module.ts ***!
+  \***********************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog/post-detail/post-detail.component */ "./app/blog/post-detail/post-detail.component.ts");
+/* harmony import */ var _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blog/posts-list/posts-list.component */ "./app/blog/posts-list/posts-list.component.ts");
+/* harmony import */ var _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blog/blog/blog.component */ "./app/blog/blog/blog.component.ts");
+/* harmony import */ var _home_about_about_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/about/about.component */ "./app/home/about/about.component.ts");
+/* harmony import */ var _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/contact/contact.component */ "./app/home/contact/contact.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var appRoutes = [
+    {
+        path: "blog", component: _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_4__["BlogComponent"], children: [
+            { path: "", component: _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_3__["PostsListComponent"] },
+            { path: "post/:id", component: _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_2__["PostDetailComponent"] }
+        ]
+    },
+    { path: "contact", component: _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__["ContactComponent"] },
+    { path: "about", component: _home_about_about_component__WEBPACK_IMPORTED_MODULE_5__["AboutComponent"] },
+];
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(appRoutes, {
+                    useHash: true,
+                    enableTracing: false // for Debugging of the Routes
+                })
+            ],
+            exports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]
+            ]
+        })
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./app/app.component.html":
 /*!********************************!*\
   !*** ./app/app.component.html ***!
@@ -90,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_layout_footer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/layout/footer.component */ "./app/shared/layout/footer.component.ts");
 /* harmony import */ var _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blog/blog/blog.component */ "./app/blog/blog/blog.component.ts");
 /* harmony import */ var _shared_dataService__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./app/app-routing.module.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/about/about.component */ "./app/home/about/about.component.ts");
 /* harmony import */ var _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/contact/contact.component */ "./app/home/contact/contact.component.ts");
@@ -115,16 +178,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var routes = [
-    {
-        path: "blog", component: _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_9__["BlogComponent"], children: [
-            { path: "", component: _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_6__["PostsListComponent"] },
-            { path: "post/:id", component: _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_5__["PostDetailComponent"] }
-        ]
-    },
-    { path: "contact", component: _home_contact_contact_component__WEBPACK_IMPORTED_MODULE_14__["ContactComponent"] },
-    { path: "about", component: _home_about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"] },
-];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -145,10 +198,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(routes, {
-                    useHash: true,
-                    enableTracing: false // for Debugging of the Routes
-                })
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"]
             ],
             providers: [
                 _shared_dataService__WEBPACK_IMPORTED_MODULE_10__["DataService"],
@@ -282,7 +332,7 @@ var PostDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a href=\"javascript:void(0)\">{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of p.postTags\">{{t.tag.tagName}}</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a [routerLink]=\"['post',p.id]\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
+module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" *ngFor=\"let p of posts\">\r\n    <div class=\"card-body overflow-hidden overflow-hidden\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-6\">\r\n                <img src=\"assets/img/demo/{{ p.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n            </div>\r\n            <div class=\"col-xl-6\">\r\n                <h3 class=\"no-mt\"><a  [routerLink]=\"['post',p.id]\" >{{ p.title }}</a></h3>\r\n                <p class=\"mb-4\">{{ p.description }}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-8\">\r\n                <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of p.postTags\">{{t.tag.tagName}}</a>\r\n                <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ p.creationDate | date:'longDate' }}</span></span>\r\n            </div>\r\n            <div class=\"col-lg-4 text-right\">\r\n                <a [routerLink]=\"['post',p.id]\" class=\"btn btn-primary btn-raised btn-block animate-icon\">Read More <i class=\"ml-1 no-mr zmdi zmdi-long-arrow-right\"></i></a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n"
 
 /***/ }),
 
@@ -628,7 +678,7 @@ var Footer = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    <header class=\"ms-header ms-header-primary\">\r\n        <!--ms-header-primary-->\r\n        <div class=\"container container-full\">\r\n            <div class=\"ms-title\">\r\n                <a href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot50x50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                    <h1 class=\"animated fadeInRight animation-delay-6\">Jon <span>Thomasson</span></h1>\r\n                </a>\r\n            </div>\r\n            <div class=\"header-right\">\r\n                <div class=\"share-menu\">\r\n                    <ul class=\"share-menu-list\">\r\n                        <li class=\"animated fadeInRight animation-delay-3\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-google\"><i class=\"zmdi zmdi-google\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-2\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-facebook\"><i class=\"zmdi zmdi-facebook\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-1\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a></li>\r\n                    </ul>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-primary animated zoomInDown animation-delay-7\"><i class=\"zmdi zmdi-share\"></i></a>\r\n                </div>\r\n                <form class=\"search-form animated zoomInDown animation-delay-9\">\r\n                    <input id=\"search-box\" type=\"text\" class=\"search-input\" placeholder=\"Search...\" name=\"q\" />\r\n                    <label for=\"search-box\"><i class=\"zmdi zmdi-search\"></i></label>\r\n                </form>\r\n                <a href=\"javascript:void(0)\" class=\"btn-circle btn-rss animated zoomInDown animation-delay-9\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <nav class=\"navbar navbar-expand-md  navbar-static ms-navbar ms-navbar-primary\">\r\n        <div class=\"container container-full\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot35x35.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                 \r\n                    <span class=\"ms-title\">Jon <strong>Thomasson</strong></span>\r\n                </a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"ms-navbar\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"blog\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"about\" >About</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"contact\" >Contact Me</a>\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n        </div> <!-- container -->\r\n    </nav>\r\n"
+module.exports = "    <header class=\"ms-header ms-header-primary\">\r\n        <!--ms-header-primary-->\r\n        <div class=\"container container-full\">\r\n            <div class=\"ms-title\">\r\n                <a href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot50x50.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                    <h1 class=\"animated fadeInRight animation-delay-6\">Jon <span>Thomasson</span></h1>\r\n                </a>\r\n            </div>\r\n            <div class=\"header-right\">\r\n                <div class=\"share-menu\">\r\n                    <ul class=\"share-menu-list\">\r\n                        <li class=\"animated fadeInRight animation-delay-3\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-google\"><i class=\"zmdi zmdi-google\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-2\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-facebook\"><i class=\"zmdi zmdi-facebook\"></i></a></li>\r\n                        <li class=\"animated fadeInRight animation-delay-1\"><a href=\"javascript:void(0)\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a></li>\r\n                    </ul>\r\n                    <a href=\"javascript:void(0)\" class=\"btn-circle btn-circle-primary animated zoomInDown animation-delay-7\"><i class=\"zmdi zmdi-share\"></i></a>\r\n                </div>\r\n                <form class=\"search-form animated zoomInDown animation-delay-9\">\r\n                    <input id=\"search-box\" type=\"text\" class=\"search-input\" placeholder=\"Search...\" name=\"q\" />\r\n                    <label for=\"search-box\"><i class=\"zmdi zmdi-search\"></i></label>\r\n                </form>\r\n                <a href=\"javascript:void(0)\" class=\"btn-circle btn-rss animated zoomInDown animation-delay-9\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <nav class=\"navbar navbar-expand-md  navbar-static ms-navbar ms-navbar-primary\">\r\n        <div class=\"container container-full\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"index.html\">\r\n                    <img src=\"/assets/img/demo/headshot35x35.jpg\" alt=\"...\" class=\"rounded-circle mr-1\">\r\n                 \r\n                    <span class=\"ms-title\">Jon <strong>Thomasson</strong></span>\r\n                </a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"ms-navbar\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"blog\">Blog</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"about\" >About</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" routerLinkActive=\"active\">\r\n                        <a class=\"nav-link\" routerLink=\"contact\" >Contact Me</a>\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n        </div> <!-- container -->\r\n    </nav>\r\n"
 
 /***/ }),
 
