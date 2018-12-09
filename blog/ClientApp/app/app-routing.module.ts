@@ -8,8 +8,10 @@ const appRoutes: Routes = [
         path: 'blog',
         loadChildren: './blog/blog.module#BlogModule'
     },
-    { path: 'contact', component: ContactComponent },
-    { path: 'about', component: AboutComponent }
+    {
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
+    }
 ];
 
 @NgModule({

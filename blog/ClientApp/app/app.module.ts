@@ -7,16 +7,12 @@ import { HeaderComponent } from "./shared/layout/header/header.component";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from '@angular/common';
-import { AboutComponent } from './home/about/about.component';
-import { ContactComponent } from './home/contact/contact.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       HeaderComponent,
-      FooterComponent,
-      AboutComponent,
-      ContactComponent
+      FooterComponent
   ],
   imports: [
       BrowserModule,
