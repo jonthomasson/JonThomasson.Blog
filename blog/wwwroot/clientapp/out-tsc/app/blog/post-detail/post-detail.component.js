@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from "@angular/core";
-import { DataService } from "../../shared/dataService";
+import { DataService } from "../shared/data-service";
 import { ActivatedRoute } from '@angular/router';
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(data, route) {

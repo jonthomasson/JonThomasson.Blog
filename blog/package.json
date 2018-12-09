@@ -1,5 +1,5 @@
 {
-  "name": "asp.net",
+  "name": "blog-app",
   "version": "1.0.0",
   "private": true,
   "dependencies": {

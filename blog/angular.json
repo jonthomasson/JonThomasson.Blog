@@ -14,6 +14,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "wwwroot/clientapp/dist",
+            "baseHref": "clientapp/dist/",
+            "deployUrl": "clientapp/dist/",
             "index": "ClientApp/index.html",
             "main": "ClientApp/main.ts",
             "polyfills": "ClientApp/polyfills.ts",

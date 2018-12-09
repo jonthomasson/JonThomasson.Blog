@@ -6,7 +6,6 @@ import { FooterComponent } from "./shared/layout/footer/footer.component";
 import { HeaderComponent } from "./shared/layout/header/header.component";
 
 import { AppRoutingModule } from './app-routing.module';
-import { BlogModule } from './blog/blog.module';
 
 import { FormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from '@angular/common';
@@ -25,9 +24,9 @@ import { ContactComponent } from './home/contact/contact.component';
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      AppRoutingModule,
-      BlogModule
+      AppRoutingModule
   ],
-  bootstrap: [AppComponent] 
+    bootstrap: [AppComponent]
+    //providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
 export class AppModule { }
