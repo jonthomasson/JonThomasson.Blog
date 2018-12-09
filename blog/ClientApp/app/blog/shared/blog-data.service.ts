@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Post } from "../../blog/shared/post";
 
 @Injectable()
-export class DataService {
+export class BlogDataService {
 
     constructor(private http: HttpClient) {
 

@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { DataService } from "../shared/data-service";
+import { BlogDataService } from "../shared/blog-data.service";
 import { Post } from "../shared/post";
 import { Router } from "@angular/router";
 
@@ -12,7 +12,7 @@ export class PostsListComponent implements OnInit {
     public posts: Post[];
     private numPosts: number = 5;
 
-    constructor(private data: DataService) {
+    constructor(private data: BlogDataService) {
         this.posts = data.posts;
     }
 

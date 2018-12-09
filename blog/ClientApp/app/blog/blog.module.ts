@@ -5,7 +5,7 @@ import { PostDetailComponent } from "../blog/post-detail/post-detail.component";
 import { PostsListComponent } from "../blog/posts-list/posts-list.component";
 import { BlogComponent } from "../blog/blog/blog.component";
 import { BlogRoutingModule } from "../blog/blog-routing.module";
-import { DataService } from "../blog/shared/data-service"
+import { BlogDataService } from "../blog/shared/blog-data.service"
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { DataService } from "../blog/shared/data-service"
         BlogComponent
     ],
     providers: [
-        DataService,
+        BlogDataService,
         //{ provide: APP_BASE_HREF, useValue: '/' }
     ],
 })

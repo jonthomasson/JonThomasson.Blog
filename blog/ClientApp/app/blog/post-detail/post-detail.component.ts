@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { DataService } from "../shared/data-service";
+import { BlogDataService } from "../shared/blog-data.service";
 import { Post } from "../shared/post";
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +11,7 @@ export class PostDetailComponent implements OnInit {
     public post: Post;
     public postId: string = '';
 
-    constructor(private data: DataService, private route: ActivatedRoute) {
+    constructor(private data: BlogDataService, private route: ActivatedRoute) {
         this.post = data.post;
     }
 

@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blog/posts-list/posts-list.component */ "./app/blog/posts-list/posts-list.component.ts");
 /* harmony import */ var _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blog/blog/blog.component */ "./app/blog/blog/blog.component.ts");
 /* harmony import */ var _blog_blog_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blog/blog-routing.module */ "./app/blog/blog-routing.module.ts");
-/* harmony import */ var _blog_shared_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blog/shared/data-service */ "./app/blog/shared/data-service.ts");
+/* harmony import */ var _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blog/shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -102,7 +102,7 @@ var BlogModule = /** @class */ (function () {
                 _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__["BlogComponent"]
             ],
             providers: [
-                _blog_shared_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"],
+                _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_7__["BlogDataService"],
             ],
         })
     ], BlogModule);
@@ -180,7 +180,7 @@ module.exports = "\r\n<div *ngIf=\"post\" class=\"card animated fadeInLeftTiny a
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostDetailComponent", function() { return PostDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/data-service */ "./app/blog/shared/data-service.ts");
+/* harmony import */ var _shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -216,7 +216,7 @@ var PostDetailComponent = /** @class */ (function () {
             selector: "post-detail",
             template: __webpack_require__(/*! ./post-detail.component.html */ "./app/blog/post-detail/post-detail.component.html")
         }),
-        __metadata("design:paramtypes", [_shared_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__["BlogDataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], PostDetailComponent);
     return PostDetailComponent;
 }());
@@ -247,7 +247,7 @@ module.exports = "<article class=\"card wow fadeInLeft animation-delay-5 mb-4\" 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsListComponent", function() { return PostsListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/data-service */ "./app/blog/shared/data-service.ts");
+/* harmony import */ var _shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -279,7 +279,7 @@ var PostsListComponent = /** @class */ (function () {
             selector: "posts-list",
             template: __webpack_require__(/*! ./posts-list.component.html */ "./app/blog/posts-list/posts-list.component.html"),
         }),
-        __metadata("design:paramtypes", [_shared_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
+        __metadata("design:paramtypes", [_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__["BlogDataService"]])
     ], PostsListComponent);
     return PostsListComponent;
 }());
@@ -333,16 +333,16 @@ var PostsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./app/blog/shared/data-service.ts":
-/*!*****************************************!*\
-  !*** ./app/blog/shared/data-service.ts ***!
-  \*****************************************/
-/*! exports provided: DataService */
+/***/ "./app/blog/shared/blog-data.service.ts":
+/*!**********************************************!*\
+  !*** ./app/blog/shared/blog-data.service.ts ***!
+  \**********************************************/
+/*! exports provided: BlogDataService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogDataService", function() { return BlogDataService; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
@@ -358,12 +358,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var DataService = /** @class */ (function () {
-    function DataService(http) {
+var BlogDataService = /** @class */ (function () {
+    function BlogDataService(http) {
         this.http = http;
         this.posts = [];
     }
-    DataService.prototype.loadPosts = function () {
+    BlogDataService.prototype.loadPosts = function () {
         var _this = this;
         return this.http.get("/api/posts")
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
@@ -371,7 +371,7 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    DataService.prototype.getLatest = function (numPosts) {
+    BlogDataService.prototype.getLatest = function (numPosts) {
         var _this = this;
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpParams"]();
         params = params.append('numPosts', numPosts);
@@ -381,7 +381,7 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    DataService.prototype.getPost = function (id) {
+    BlogDataService.prototype.getPost = function (id) {
         var _this = this;
         return this.http.get("/api/posts/" + id)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
@@ -389,11 +389,11 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    DataService = __decorate([
+    BlogDataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
-    ], DataService);
-    return DataService;
+    ], BlogDataService);
+    return BlogDataService;
 }());
 
 
