@@ -6,33 +6,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-var appRoutes = [
+import { AboutComponent } from "../home/about/about.component";
+import { ContactComponent } from "../home/contact/contact.component";
+import { HomeComponent } from "../home/home/home.component";
+var homeRoutes = [
     {
-        path: 'blog',
-        loadChildren: './blog/blog.module#BlogModule'
-    },
-    {
-        path: 'home',
-        loadChildren: './home/home.module#HomeModule'
+        path: "", component: HomeComponent, children: [
+            { path: 'contact', component: ContactComponent },
+            { path: 'about', component: AboutComponent }
+        ]
     }
 ];
-var AppRoutingModule = /** @class */ (function () {
-    function AppRoutingModule() {
+var HomeRoutingModule = /** @class */ (function () {
+    function HomeRoutingModule() {
     }
-    AppRoutingModule = __decorate([
+    HomeRoutingModule = __decorate([
         NgModule({
             imports: [
-                RouterModule.forRoot(appRoutes, {
-                    useHash: true,
-                    enableTracing: false // for Debugging of the Routes
-                })
+                RouterModule.forChild(homeRoutes)
             ],
             exports: [
                 RouterModule
             ]
         })
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], HomeRoutingModule);
+    return HomeRoutingModule;
 }());
-export { AppRoutingModule };
-//# sourceMappingURL=app-routing.module.js.map
+export { HomeRoutingModule };
+//# sourceMappingURL=home-routing.module.js.map

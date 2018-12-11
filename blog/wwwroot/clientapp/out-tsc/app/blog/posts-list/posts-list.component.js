@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from "@angular/core";
-import { DataService } from "../shared/data-service";
+import { BlogDataService } from "../shared/blog-data.service";
 var PostsListComponent = /** @class */ (function () {
     function PostsListComponent(data) {
         this.data = data;
@@ -29,7 +29,7 @@ var PostsListComponent = /** @class */ (function () {
             selector: "posts-list",
             templateUrl: "posts-list.component.html",
         }),
-        __metadata("design:paramtypes", [DataService])
+        __metadata("design:paramtypes", [BlogDataService])
     ], PostsListComponent);
     return PostsListComponent;
 }());

@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from "@angular/core";
-import { DataService } from "../shared/data-service";
+import { BlogDataService } from "../shared/blog-data.service";
 import { ActivatedRoute } from '@angular/router';
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(data, route) {
@@ -32,7 +32,7 @@ var PostDetailComponent = /** @class */ (function () {
             selector: "post-detail",
             templateUrl: "post-detail.component.html"
         }),
-        __metadata("design:paramtypes", [DataService, ActivatedRoute])
+        __metadata("design:paramtypes", [BlogDataService, ActivatedRoute])
     ], PostDetailComponent);
     return PostDetailComponent;
 }());
