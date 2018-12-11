@@ -23,3 +23,4 @@ current list of todo's (no particular order):
 12. Setup gulp tasks for minifying js libs and publish them via azure to server. 
 13. Setup both development and production environment.
 14. Concentrate on SEO.
+15. Breakout css and js files from original template and plugins. Add updatable nuget/npm packages instead. Setup gulp task to combine and minimize.
