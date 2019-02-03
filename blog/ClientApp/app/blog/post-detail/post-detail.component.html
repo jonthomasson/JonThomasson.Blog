@@ -11,15 +11,62 @@
         <div [innerHTML]="post.bodyHtml"></div>
     </div>
 </div>
-<div *ngIf="post" class="card animated fadeInLeftTiny animation-delay-5">
-    <div class="card-body card-body-big">
-        <h1 class="no-mt">Comments</h1>
-        <div class="col-md-12" *ngFor="let c of post.comments">
-            <p>{{ c.text }}</p>
-            <p><span>{{ c.userDisplayName }} -</span> <span class="text-muted">{{ c.creationDate | date:'medium' }}</span></p>
-        </div>
-        
+<div *ngIf="post" class="row wow materialUp animation-delay-8">
+    <div class="col-md-12">
+        <h2 class="color-primary right-line">Comments</h2>
+        <ul class="ms-timeline">
+            <li class="ms-timeline-item wow materialUp" *ngFor="let c of post.comments">
+                <div class="ms-timeline-date">
+                    <time class="timeline-time" dateTime="{{ c.creationDate }}"><span>{{ c.userDisplayName }}</span></time>
+                    <i class="ms-timeline-point bg-primary"></i>
+                    <img src="assets/img/demo/avatar6.jpg" class="ms-timeline-point-img">
+                </div>
+                <div class="card card-primary">
+                    <div class="card-body">
+                        <p>{{ c.text }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary animated fadeInUp animation-delay-7">
+            <div class="card-body">
+                <h2 class="color-primary text-center">Leave a comment</h2>
+                <form class="form-horizontal">
+                    <fieldset class="container">
+                        <div class="form-group row">
+                            <label for="inputEmail" autocomplete="false" class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail" autocomplete="false" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="textArea" class="col-lg-2 control-label">Comment</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" rows="6" id="textArea" placeholder="Your comment..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-end">
+                            <div class="col-lg-10">
+                                <button type="submit" class="btn btn-raised btn-primary">Send Comment</button>
+                                <button type="button" class="btn btn-danger">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
