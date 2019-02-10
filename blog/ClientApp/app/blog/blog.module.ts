@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { PostsComponent } from "../blog/posts/posts.component";
 import { PostDetailComponent } from "../blog/post-detail/post-detail.component";
 import { PostsListComponent } from "../blog/posts-list/posts-list.component";
@@ -8,10 +9,12 @@ import { BlogRoutingModule } from "../blog/blog-routing.module";
 import { BlogDataService } from "../blog/shared/blog-data.service"
 
 
+
 @NgModule({
   imports: [
       CommonModule,
-      BlogRoutingModule
+      BlogRoutingModule,
+      FormsModule
   ],
     declarations: [
         PostsComponent,

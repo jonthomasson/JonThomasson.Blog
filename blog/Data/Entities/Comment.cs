@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,9 @@ namespace JonThomasson.Blog.Data.Entities
         public DateTime CreationDate { get; set; }
         [MaxLength(30)]
         public string UserDisplayName { get; set; }
-
+        [MaxLength(200)]
+        public string UserEmail { get; set; }
+        [DefaultValue(false)]
+        public bool HasBeenModerated { get; set; }
     }
 }

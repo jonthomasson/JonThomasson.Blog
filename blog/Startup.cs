@@ -74,7 +74,7 @@ namespace blog
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Post, PostViewModel>();
-                cfg.CreateMap<Comment, CommentViewModel>();
+                cfg.CreateMap<CommentViewModel, Comment>().ForMember(x => x.HasBeenModerated, opt => opt.Ignore()); ;
                 cfg.CreateMap<Tag, TagViewModel>();
                 cfg.CreateMap<Post, PostListViewModel>();
                 cfg.CreateMap<PostTag, PostTagViewModel>();

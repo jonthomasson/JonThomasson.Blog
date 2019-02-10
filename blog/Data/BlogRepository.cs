@@ -19,6 +19,11 @@ namespace JonThomasson.Blog.Data
             _ctx = ctx;
         }
 
+        public void AddEntity(object model)
+        {
+            _ctx.Add(model);
+        }
+
         public IEnumerable<Post> GetAllPosts(bool includeComments)
         {
             if (includeComments)
@@ -34,6 +39,16 @@ namespace JonThomasson.Blog.Data
         {
             return _ctx.Posts
                 .FirstOrDefault(o => o.Id == id);
+        }
+
+        public void AddComment(Comment comment)
+        {
+            AddEntity(comment);
+        }
+
+        public bool SaveAll()
+        {
+            return _ctx.SaveChanges() > 0;
         }
     }
 }

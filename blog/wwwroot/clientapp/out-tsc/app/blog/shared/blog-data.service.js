@@ -41,6 +41,15 @@ var BlogDataService = /** @class */ (function () {
             return true;
         }));
     };
+    BlogDataService.prototype.postComment = function (comment) {
+        return this.http.post("/api/posts/addcomment", comment)
+            .pipe(map(function (response) {
+            //let tokenInfo = response;
+            //this.token = tokenInfo.token;
+            //this.tokenExpiration = tokenInfo.expiration;
+            return true;
+        }));
+    };
     BlogDataService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])

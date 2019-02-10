@@ -66,18 +66,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogModule", function() { return BlogModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _blog_posts_posts_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blog/posts/posts.component */ "./app/blog/posts/posts.component.ts");
-/* harmony import */ var _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blog/post-detail/post-detail.component */ "./app/blog/post-detail/post-detail.component.ts");
-/* harmony import */ var _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blog/posts-list/posts-list.component */ "./app/blog/posts-list/posts-list.component.ts");
-/* harmony import */ var _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blog/blog/blog.component */ "./app/blog/blog/blog.component.ts");
-/* harmony import */ var _blog_blog_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blog/blog-routing.module */ "./app/blog/blog-routing.module.ts");
-/* harmony import */ var _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blog/shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _blog_posts_posts_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blog/posts/posts.component */ "./app/blog/posts/posts.component.ts");
+/* harmony import */ var _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blog/post-detail/post-detail.component */ "./app/blog/post-detail/post-detail.component.ts");
+/* harmony import */ var _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blog/posts-list/posts-list.component */ "./app/blog/posts-list/posts-list.component.ts");
+/* harmony import */ var _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blog/blog/blog.component */ "./app/blog/blog/blog.component.ts");
+/* harmony import */ var _blog_blog_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blog/blog-routing.module */ "./app/blog/blog-routing.module.ts");
+/* harmony import */ var _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../blog/shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -93,16 +95,17 @@ var BlogModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _blog_blog_routing_module__WEBPACK_IMPORTED_MODULE_6__["BlogRoutingModule"]
+                _blog_blog_routing_module__WEBPACK_IMPORTED_MODULE_7__["BlogRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
             ],
             declarations: [
-                _blog_posts_posts_component__WEBPACK_IMPORTED_MODULE_2__["PostsComponent"],
-                _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_4__["PostsListComponent"],
-                _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_3__["PostDetailComponent"],
-                _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__["BlogComponent"]
+                _blog_posts_posts_component__WEBPACK_IMPORTED_MODULE_3__["PostsComponent"],
+                _blog_posts_list_posts_list_component__WEBPACK_IMPORTED_MODULE_5__["PostsListComponent"],
+                _blog_post_detail_post_detail_component__WEBPACK_IMPORTED_MODULE_4__["PostDetailComponent"],
+                _blog_blog_blog_component__WEBPACK_IMPORTED_MODULE_6__["BlogComponent"]
             ],
             providers: [
-                _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_7__["BlogDataService"],
+                _blog_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_8__["BlogDataService"],
             ],
         })
     ], BlogModule);
@@ -165,7 +168,7 @@ var BlogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div *ngIf=\"post\" class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <img *ngIf=\"post.photoName\" src=\"/assets/img/demo/{{ post.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"post\" class=\"row wow materialUp animation-delay-8\">\r\n    <div class=\"col-md-12\">\r\n        <h2 class=\"color-primary right-line\">Comments</h2>\r\n        <ul class=\"ms-timeline\">\r\n            <li class=\"ms-timeline-item wow materialUp\" *ngFor=\"let c of post.comments\">\r\n                <div class=\"ms-timeline-date\">\r\n                    <time class=\"timeline-time\" dateTime=\"{{ c.creationDate }}\"><span>{{ c.userDisplayName }}</span></time>\r\n                    <i class=\"ms-timeline-point bg-primary\"></i>\r\n                    <img src=\"assets/img/demo/avatar6.jpg\" class=\"ms-timeline-point-img\">\r\n                </div>\r\n                <div class=\"card card-primary\">\r\n                    <div class=\"card-body\">\r\n                        <p>{{ c.text }}</p>\r\n                    </div>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"card card-primary animated fadeInUp animation-delay-7\">\r\n            <div class=\"card-body\">\r\n                <h2 class=\"color-primary text-center\">Leave a comment</h2>\r\n                <form class=\"form-horizontal\">\r\n                    <fieldset class=\"container\">\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"text\" class=\"form-control\" id=\"inputName\" placeholder=\"Name\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Email</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"email\" class=\"form-control\" id=\"inputEmail\" placeholder=\"Email\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"textArea\" class=\"col-lg-2 control-label\">Comment</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <textarea class=\"form-control\" rows=\"6\" id=\"textArea\" placeholder=\"Your comment...\"></textarea>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row justify-content-end\">\r\n                            <div class=\"col-lg-10\">\r\n                                <button type=\"submit\" class=\"btn btn-raised btn-primary\">Send Comment</button>\r\n                                <button type=\"button\" class=\"btn btn-danger\">Cancel</button>\r\n                            </div>\r\n                        </div>\r\n                    </fieldset>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n"
+module.exports = "\r\n<div *ngIf=\"post\" class=\"card animated fadeInLeftTiny animation-delay-5\">\r\n    <div class=\"card-body card-body-big\">\r\n        <h1 class=\"no-mt\">{{ post.title }}</h1>\r\n        <div class=\"mb-4\">\r\n            <a href=\"javascript:void(0)\" class=\"ms-tag ms-tag-info\" *ngFor=\"let t of post.postTags\">{{t.tag.tagName}}</a>\r\n            <span class=\"ml-1 d-none d-sm-inline\"><i class=\"zmdi zmdi-time mr-05 color-info\"></i> <span class=\"color-medium-dark\">{{ post.creationDate | date:'longDate' }}</span></span>\r\n            <span class=\"ml-1\"><i class=\"zmdi zmdi-comments color-royal mr-05\"></i> {{ post.comments.length }}</span>\r\n        </div>\r\n        <img *ngIf=\"post.photoName\" src=\"/assets/img/demo/{{ post.photoName }}\" alt=\"\" class=\"img-fluid mb-4\">\r\n        <div [innerHTML]=\"post.bodyHtml\"></div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"post\" class=\"row wow materialUp animation-delay-8\">\r\n    <div class=\"col-md-12\">\r\n        <h2 class=\"color-primary right-line\">Comments</h2>\r\n        <ul class=\"ms-timeline\">\r\n            <li class=\"ms-timeline-item wow materialUp\" *ngFor=\"let c of post.comments\">\r\n                <div class=\"ms-timeline-date\">\r\n                    <time class=\"timeline-time\" dateTime=\"{{ c.creationDate }}\"><span>{{ c.userDisplayName }}</span></time>\r\n                    <i class=\"ms-timeline-point bg-primary\"></i>\r\n                    <img src=\"assets/img/demo/avatar6.jpg\" class=\"ms-timeline-point-img\">\r\n                </div>\r\n                <div class=\"card card-primary\">\r\n                    <div class=\"card-body\">\r\n                        <p>{{ c.text }}</p>\r\n                    </div>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"card card-primary animated fadeInUp animation-delay-7\">\r\n            <div class=\"card-body\">\r\n                <h2 class=\"color-primary text-center\">Leave a comment</h2>\r\n                <form class=\"form-horizontal\" (submit)=\"onComment()\" >\r\n                    <fieldset class=\"container\">\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"text\" class=\"form-control\" id=\"userDisplayName\" name=\"userDisplayName\" placeholder=\"Name\"  [(ngModel)]=\"comment.userDisplayName\" required>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"inputEmail\" autocomplete=\"false\" class=\"col-lg-2 control-label\">Email</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"email\" class=\"form-control\" id=\"userEmail\" name=\"userEmail\" placeholder=\"Email\" [(ngModel)]=\"comment.userEmail\" required>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label for=\"textArea\" class=\"col-lg-2 control-label\">Comment</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <textarea class=\"form-control\" rows=\"6\" id=\"text\" name=\"text\" placeholder=\"Your comment...\" [(ngModel)]=\"comment.text\" required></textarea>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row justify-content-end\">\r\n                            <div class=\"col-lg-10\">\r\n                                <button type=\"submit\" class=\"btn btn-raised btn-primary\">Send Comment</button>\r\n                                <button type=\"button\" class=\"btn btn-danger\">Cancel</button>\r\n                            </div>\r\n                        </div>\r\n                    </fieldset>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -181,7 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostDetailComponent", function() { return PostDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/blog-data.service */ "./app/blog/shared/blog-data.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_comment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/comment */ "./app/blog/shared/comment.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -194,13 +198,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(data, route) {
         this.data = data;
         this.route = route;
         this.postId = '';
         this.post = data.post;
+        this.comment = new _shared_comment__WEBPACK_IMPORTED_MODULE_2__["Comment"]();
     }
+    PostDetailComponent.prototype.onComment = function () {
+        this.comment.postId = 2;
+        this.data.postComment(this.comment)
+            .subscribe(function (success) {
+            if (success) {
+                //if (this.data.order.items.length == 0) {
+                //    this.router.navigate([""]);
+                //} else {
+                //    this.router.navigate(["checkout"]);
+                //}
+            }
+        });
+    };
     PostDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.postId = this.route.snapshot.paramMap.get('id');
@@ -216,7 +235,7 @@ var PostDetailComponent = /** @class */ (function () {
             selector: "post-detail",
             template: __webpack_require__(/*! ./post-detail.component.html */ "./app/blog/post-detail/post-detail.component.html")
         }),
-        __metadata("design:paramtypes", [_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__["BlogDataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_shared_blog_data_service__WEBPACK_IMPORTED_MODULE_1__["BlogDataService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
     ], PostDetailComponent);
     return PostDetailComponent;
 }());
@@ -389,11 +408,40 @@ var BlogDataService = /** @class */ (function () {
             return true;
         }));
     };
+    BlogDataService.prototype.postComment = function (comment) {
+        return this.http.post("/api/posts/addcomment", comment)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            //let tokenInfo = response;
+            //this.token = tokenInfo.token;
+            //this.tokenExpiration = tokenInfo.expiration;
+            return true;
+        }));
+    };
     BlogDataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
     ], BlogDataService);
     return BlogDataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/blog/shared/comment.ts":
+/*!************************************!*\
+  !*** ./app/blog/shared/comment.ts ***!
+  \************************************/
+/*! exports provided: Comment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Comment", function() { return Comment; });
+var Comment = /** @class */ (function () {
+    function Comment() {
+    }
+    return Comment;
 }());
 
 

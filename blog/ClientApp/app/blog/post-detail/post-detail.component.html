@@ -35,24 +35,24 @@
         <div class="card card-primary animated fadeInUp animation-delay-7">
             <div class="card-body">
                 <h2 class="color-primary text-center">Leave a comment</h2>
-                <form class="form-horizontal">
+                <form class="form-horizontal" (submit)="onComment()" >
                     <fieldset class="container">
                         <div class="form-group row">
                             <label for="inputEmail" autocomplete="false" class="col-lg-2 control-label">Name</label>
                             <div class="col-lg-9">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                <input type="text" class="form-control" id="userDisplayName" name="userDisplayName" placeholder="Name"  [(ngModel)]="comment.userDisplayName" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail" autocomplete="false" class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-9">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="Email" [(ngModel)]="comment.userEmail" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="textArea" class="col-lg-2 control-label">Comment</label>
                             <div class="col-lg-9">
-                                <textarea class="form-control" rows="6" id="textArea" placeholder="Your comment..."></textarea>
+                                <textarea class="form-control" rows="6" id="text" name="text" placeholder="Your comment..." [(ngModel)]="comment.text" required></textarea>
                             </div>
                         </div>
                         <div class="form-group row justify-content-end">

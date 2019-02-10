@@ -62,5 +62,34 @@ namespace JonThomasson.Blog.Controllers
                 return BadRequest($"Failed to get posts. {ex.Message}");
             }
         }
+
+        [HttpPost("addcomment")]
+        public async Task<IActionResult> AddComment([FromBody]CommentViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var newComment = Mapper.Map<Data.Entities.Comment>(model);
+
+                    _repository.AddComment(Mapper.Map<Data.Entities.Comment>(newComment));
+
+                    if (_repository.SaveAll())
+                    {
+                        return Created($"/api/posts/comment/{newComment.Id}", Mapper.Map<CommentViewModel>(newComment));
+                    }
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                //_logger.LogError($"Failed to save comment: {ex}");
+            }
+
+            return BadRequest("Failed to save comment");
+        }
     }
 }

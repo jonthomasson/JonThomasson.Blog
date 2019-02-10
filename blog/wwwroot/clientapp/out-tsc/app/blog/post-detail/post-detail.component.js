@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from "@angular/core";
 import { BlogDataService } from "../shared/blog-data.service";
+import { Comment } from "../shared/comment";
 import { ActivatedRoute } from '@angular/router';
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(data, route) {
@@ -16,7 +17,21 @@ var PostDetailComponent = /** @class */ (function () {
         this.route = route;
         this.postId = '';
         this.post = data.post;
+        this.comment = new Comment();
     }
+    PostDetailComponent.prototype.onComment = function () {
+        this.comment.postId = 2;
+        this.data.postComment(this.comment)
+            .subscribe(function (success) {
+            if (success) {
+                //if (this.data.order.items.length == 0) {
+                //    this.router.navigate([""]);
+                //} else {
+                //    this.router.navigate(["checkout"]);
+                //}
+            }
+        });
+    };
     PostDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.postId = this.route.snapshot.paramMap.get('id');

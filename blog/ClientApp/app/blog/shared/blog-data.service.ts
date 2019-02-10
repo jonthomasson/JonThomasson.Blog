@@ -44,4 +44,15 @@ export class BlogDataService {
                 }));
     }
 
+    postComment(comment) {
+        return this.http.post("/api/posts/addcomment", comment)
+            .pipe(
+                map((response: any) => {
+                    //let tokenInfo = response;
+                    //this.token = tokenInfo.token;
+                    //this.tokenExpiration = tokenInfo.expiration;
+                    return true;
+                }));
+    }
+
 }

@@ -12,5 +12,6 @@ namespace JonThomasson.Blog.ViewModels
         public string Text { get; set; }
         public DateTime CreationDate { get; set; }
         public string UserDisplayName { get; set; }
+        public string UserEmail { get; set; }
     }
 }

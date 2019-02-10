@@ -9,7 +9,10 @@ namespace JonThomasson.Blog.Data
 {
     public interface IBlogRepository
     {
+        void AddEntity(object model);
         IEnumerable<Post> GetAllPosts(bool includeComments);
         Post GetPostById(int id);
+        void AddComment(Comment comment);
+        bool SaveAll();
     }
 }
