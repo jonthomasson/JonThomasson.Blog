@@ -20,7 +20,7 @@ var PostDetailComponent = /** @class */ (function () {
         this.comment = new Comment();
     }
     PostDetailComponent.prototype.onComment = function () {
-        this.comment.postId = 2;
+        this.comment.postId = +this.postId;
         this.data.postComment(this.comment)
             .subscribe(function (success) {
             if (success) {

@@ -19,7 +19,7 @@ export class PostDetailComponent implements OnInit {
     }
   
     onComment() {
-        this.comment.postId = 2;
+        this.comment.postId = +this.postId;
         this.data.postComment(this.comment)
             .subscribe(success => {
                 if (success) {

@@ -208,7 +208,7 @@ var PostDetailComponent = /** @class */ (function () {
         this.comment = new _shared_comment__WEBPACK_IMPORTED_MODULE_2__["Comment"]();
     }
     PostDetailComponent.prototype.onComment = function () {
-        this.comment.postId = 2;
+        this.comment.postId = +this.postId;
         this.data.postComment(this.comment)
             .subscribe(function (success) {
             if (success) {
