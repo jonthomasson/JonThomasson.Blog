@@ -4,14 +4,16 @@ using JonThomasson.Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JonThomasson.Blog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20190213150613_EmailSignup")]
+    partial class EmailSignup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,16 +49,16 @@ namespace JonThomasson.Blog.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.EmailSubscribe", b =>
+            modelBuilder.Entity("JonThomasson.Blog.Data.Entities.EmailSignup", b =>
                 {
                     b.Property<string>("Email")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("DateSubscribed");
+                    b.Property<DateTime>("DateSignedUp");
 
                     b.HasKey("Email");
 
-                    b.ToTable("EmailSubscribes");
+                    b.ToTable("EmailSignups");
                 });
 
             modelBuilder.Entity("JonThomasson.Blog.Data.Entities.Post", b =>

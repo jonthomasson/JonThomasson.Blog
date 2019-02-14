@@ -50,5 +50,10 @@ namespace JonThomasson.Blog.Data
         {
             return _ctx.SaveChanges() > 0;
         }
+
+        public void EmailSubscribe(EmailSubscribe emailSubscribe)
+        {
+            AddEntity(emailSubscribe);
+        }
     }
 }

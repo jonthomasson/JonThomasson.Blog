@@ -13,6 +13,7 @@ namespace JonThomasson.Blog.Data
         IEnumerable<Post> GetAllPosts(bool includeComments);
         Post GetPostById(int id);
         void AddComment(Comment comment);
+        void EmailSubscribe(EmailSubscribe emailSubscribe);
         bool SaveAll();
     }
 }

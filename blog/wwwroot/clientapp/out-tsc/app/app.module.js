@@ -12,6 +12,7 @@ import { FooterComponent } from "./shared/layout/footer/footer.component";
 import { HeaderComponent } from "./shared/layout/header/header.component";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from "@angular/forms";
+import { SharedDataService } from "../app/shared/shared-data.service";
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -27,6 +28,9 @@ var AppModule = /** @class */ (function () {
                 HttpClientModule,
                 FormsModule,
                 AppRoutingModule
+            ],
+            providers: [
+                SharedDataService,
             ],
             bootstrap: [AppComponent]
             //providers: [{ provide: APP_BASE_HREF, useValue: '/' }]

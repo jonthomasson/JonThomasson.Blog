@@ -8,31 +8,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from "@angular/core";
-import { BlogDataService } from "../../../blog/shared/blog-data.service";
+import { SharedDataService } from "../../shared-data.service";
 var FooterComponent = /** @class */ (function () {
     function FooterComponent(data) {
         this.data = data;
-        this.emailSubscribe = '';
+        this.emailSubscribe = {
+            email: ""
+        };
     }
-    FooterComponent.prototype.onEmailSignup = function () {
-        console.log(this.emailSubscribe);
-        //this.data.postComment(this.comment)
-        //    .subscribe(success => {
-        //        if (success) {
-        //            //if (this.data.order.items.length == 0) {
-        //            //    this.router.navigate([""]);
-        //            //} else {
-        //            //    this.router.navigate(["checkout"]);
-        //            //}
-        //        }
-        //    });
+    FooterComponent.prototype.onEmailSubscribe = function () {
+        this.data.emailSubscribe(this.emailSubscribe)
+            .subscribe(function (success) {
+            if (success) {
+                //if (this.data.order.items.length == 0) {
+                //    this.router.navigate([""]);
+                //} else {
+                //    this.router.navigate(["checkout"]);
+                //}
+            }
+        });
     };
     FooterComponent = __decorate([
         Component({
             selector: "layout-footer",
             templateUrl: "footer.component.html"
         }),
-        __metadata("design:paramtypes", [BlogDataService])
+        __metadata("design:paramtypes", [SharedDataService])
     ], FooterComponent);
     return FooterComponent;
 }());

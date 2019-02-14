@@ -156,12 +156,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_layout_header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/layout/header/header.component */ "./app/shared/layout/header/header.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./app/app-routing.module.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_shared_shared_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../app/shared/shared-data.service */ "./app/shared/shared-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -186,6 +188,9 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"]
             ],
+            providers: [
+                _app_shared_shared_data_service__WEBPACK_IMPORTED_MODULE_8__["SharedDataService"],
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
             //providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
         })
@@ -204,7 +209,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<aside class=\"ms-footbar\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Subscribe</h3>\r\n                    <p class=\"\">Sign up for blog updates.</p>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <form (submit)=\"onEmailSignup()\">\r\n                        <div class=\"form-group label-floating mt-2 mb-1\">\r\n                            <div class=\"input-group ms-input-subscribe\">\r\n                                <label class=\"control-label\" for=\"ms-subscribe\"><i class=\"zmdi zmdi-email\"></i> Email Adress</label>\r\n                                <input type=\"email\" id=\"ms-subscribe\" class=\"form-control\" name=\"emailSubscribe\" [(ngModel)]=\"emailSubscribe\" required>\r\n                            </div>\r\n                        </div>\r\n                        <button class=\"ms-subscribre-btn\" type=\"submit\">Subscribe</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col ms-footer-text-right\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Social Media</h3>\r\n                    <div class=\"ms-footbar-social\">\r\n                        <a href=\"http://twitter.com/@jon_thomasson\" target=\"_blank\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a>\r\n                        <a href=\"https://www.youtube.com/user/forestfolks\" target=\"_blank\" class=\"btn-circle btn-youtube\"><i class=\"zmdi zmdi-youtube-play\"></i></a>\r\n                        <a href=\"https://github.com/jonthomasson\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-github\"></i></a>\r\n                        <a href=\"https://www.linkedin.com/in/jonthomasson/\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-linkedin\"></i></a>\r\n                        <a href=\"javascript:void(0)\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</aside>\r\n<footer class=\"ms-footer\">\r\n    <div class=\"container\">\r\n        <p>Copyright &copy; Jon Thomasson 2019</p>\r\n    </div>\r\n</footer>\r\n<div class=\"btn-back-top\">\r\n    <a href=\"#\" data-scroll id=\"back-top\" class=\"btn-circle btn-circle-primary btn-circle-sm btn-circle-raised \"><i class=\"zmdi zmdi-long-arrow-up\"></i></a>\r\n</div>\r\n"
+module.exports = "<aside class=\"ms-footbar\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Subscribe</h3>\r\n                    <p class=\"\">Sign up for blog updates.</p>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <form (submit)=\"onEmailSubscribe()\">\r\n                        <div class=\"form-group label-floating mt-2 mb-1\">\r\n                            <div class=\"input-group ms-input-subscribe\">\r\n                                <label class=\"control-label\" for=\"ms-subscribe\"><i class=\"zmdi zmdi-email\"></i> Email Adress</label>\r\n                                <input type=\"email\" id=\"ms-subscribe\" class=\"form-control\" name=\"emailSubscribe\" [(ngModel)]=\"emailSubscribe.email\" required>\r\n                            </div>\r\n                        </div>\r\n                        <button class=\"ms-subscribre-btn\" type=\"submit\">Subscribe</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-4 col-md-12 ms-footer-col ms-footer-text-right\">\r\n                <div class=\"ms-footbar-block\">\r\n                    <h3 class=\"ms-footbar-title\">Social Media</h3>\r\n                    <div class=\"ms-footbar-social\">\r\n                        <a href=\"http://twitter.com/@jon_thomasson\" target=\"_blank\" class=\"btn-circle btn-twitter\"><i class=\"zmdi zmdi-twitter\"></i></a>\r\n                        <a href=\"https://www.youtube.com/user/forestfolks\" target=\"_blank\" class=\"btn-circle btn-youtube\"><i class=\"zmdi zmdi-youtube-play\"></i></a>\r\n                        <a href=\"https://github.com/jonthomasson\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-github\"></i></a>\r\n                        <a href=\"https://www.linkedin.com/in/jonthomasson/\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-linkedin\"></i></a>\r\n                        <a href=\"javascript:void(0)\" target=\"_blank\" class=\"btn-circle btn-github\"><i class=\"zmdi zmdi-rss\"></i></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</aside>\r\n<footer class=\"ms-footer\">\r\n    <div class=\"container\">\r\n        <p>Copyright &copy; Jon Thomasson 2019</p>\r\n    </div>\r\n</footer>\r\n<div class=\"btn-back-top\">\r\n    <a href=\"#\" data-scroll id=\"back-top\" class=\"btn-circle btn-circle-primary btn-circle-sm btn-circle-raised \"><i class=\"zmdi zmdi-long-arrow-up\"></i></a>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -219,6 +224,7 @@ module.exports = "<aside class=\"ms-footbar\">\r\n    <div class=\"container\">\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared-data.service */ "./app/shared/shared-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -229,29 +235,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FooterComponent = /** @class */ (function () {
-    function FooterComponent() {
-        this.emailSubscribe = '';
+    function FooterComponent(data) {
+        this.data = data;
+        this.emailSubscribe = {
+            email: ""
+        };
     }
-    FooterComponent.prototype.onEmailSignup = function () {
-        console.log(this.emailSubscribe);
-        //this.data.postComment(this.comment)
-        //    .subscribe(success => {
-        //        if (success) {
-        //            //if (this.data.order.items.length == 0) {
-        //            //    this.router.navigate([""]);
-        //            //} else {
-        //            //    this.router.navigate(["checkout"]);
-        //            //}
-        //        }
-        //    });
+    FooterComponent.prototype.onEmailSubscribe = function () {
+        this.data.emailSubscribe(this.emailSubscribe)
+            .subscribe(function (success) {
+            if (success) {
+                //if (this.data.order.items.length == 0) {
+                //    this.router.navigate([""]);
+                //} else {
+                //    this.router.navigate(["checkout"]);
+                //}
+            }
+        });
     };
     FooterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "layout-footer",
             template: __webpack_require__(/*! ./footer.component.html */ "./app/shared/layout/footer/footer.component.html")
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_data_service__WEBPACK_IMPORTED_MODULE_1__["SharedDataService"]])
     ], FooterComponent);
     return FooterComponent;
 }());
@@ -299,6 +308,55 @@ var HeaderComponent = /** @class */ (function () {
         })
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./app/shared/shared-data.service.ts":
+/*!*******************************************!*\
+  !*** ./app/shared/shared-data.service.ts ***!
+  \*******************************************/
+/*! exports provided: SharedDataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedDataService", function() { return SharedDataService; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SharedDataService = /** @class */ (function () {
+    function SharedDataService(http) {
+        this.http = http;
+    }
+    SharedDataService.prototype.emailSubscribe = function (email) {
+        return this.http.post("/blog/emailsubscribe", email)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            //let tokenInfo = response;
+            //this.token = tokenInfo.token;
+            //this.tokenExpiration = tokenInfo.expiration;
+            return true;
+        }));
+    };
+    SharedDataService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
+    ], SharedDataService);
+    return SharedDataService;
 }());
 
 
