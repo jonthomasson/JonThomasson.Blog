@@ -15,6 +15,7 @@ namespace JonThomasson.Blog.Data
         }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Message> Messages { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<EmailSubscribe> EmailSubscribes { get; set; }

@@ -346,9 +346,6 @@ var SharedDataService = /** @class */ (function () {
     SharedDataService.prototype.emailSubscribe = function (email) {
         return this.http.post("/blog/emailsubscribe", email)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
-            //let tokenInfo = response;
-            //this.token = tokenInfo.token;
-            //this.tokenExpiration = tokenInfo.expiration;
             return true;
         }));
     };

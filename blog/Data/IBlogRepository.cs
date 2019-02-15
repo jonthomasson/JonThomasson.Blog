@@ -14,6 +14,7 @@ namespace JonThomasson.Blog.Data
         Post GetPostById(int id);
         void AddComment(Comment comment);
         void EmailSubscribe(EmailSubscribe emailSubscribe);
+        void ContactMe(Message message);
         bool SaveAll();
     }
 }

@@ -8,9 +8,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { HomeDataService } from "../shared/home-data.service";
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    function ContactComponent(data) {
+        this.data = data;
+        this.contact = {
+            name: "",
+            email: "",
+            subject: "",
+            messageText: ""
+        };
     }
+    ContactComponent.prototype.onContact = function () {
+        this.data.contactMe(this.contact)
+            .subscribe(function (success) {
+            if (success) {
+            }
+        });
+    };
     ContactComponent.prototype.ngOnInit = function () {
     };
     ContactComponent = __decorate([
@@ -19,7 +34,7 @@ var ContactComponent = /** @class */ (function () {
             templateUrl: './contact.component.html',
             styleUrls: ['./contact.component.css']
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [HomeDataService])
     ], ContactComponent);
     return ContactComponent;
 }());

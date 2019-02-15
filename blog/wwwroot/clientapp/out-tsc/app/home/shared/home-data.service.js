@@ -10,21 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map } from 'rxjs/operators';
-var SharedDataService = /** @class */ (function () {
-    function SharedDataService(http) {
+var HomeDataService = /** @class */ (function () {
+    function HomeDataService(http) {
         this.http = http;
     }
-    SharedDataService.prototype.emailSubscribe = function (email) {
-        return this.http.post("/blog/emailsubscribe", email)
+    HomeDataService.prototype.contactMe = function (contact) {
+        return this.http.post("/home/contactme", contact)
             .pipe(map(function (response) {
             return true;
         }));
     };
-    SharedDataService = __decorate([
+    HomeDataService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])
-    ], SharedDataService);
-    return SharedDataService;
+    ], HomeDataService);
+    return HomeDataService;
 }());
-export { SharedDataService };
-//# sourceMappingURL=shared-data.service.js.map
+export { HomeDataService };
+//# sourceMappingURL=home-data.service.js.map

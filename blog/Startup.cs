@@ -80,8 +80,7 @@ namespace blog
                 cfg.CreateMap<PostTag, PostTagViewModel>();
                 cfg.CreateMap<Post, PostDetailViewModel>();
                 cfg.CreateMap<EmailSubscribeViewModel, EmailSubscribe>();
-
-
+                cfg.CreateMap<MessageViewModel, Message>();
             });
 
             app.UseMvc(cfg =>

@@ -55,5 +55,10 @@ namespace JonThomasson.Blog.Data
         {
             AddEntity(emailSubscribe);
         }
+
+        public void ContactMe(Message message)
+        {
+            AddEntity(message);
+        }
     }
 }
